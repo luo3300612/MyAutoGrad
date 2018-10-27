@@ -84,7 +84,6 @@ class Mat:
                 row.append(Node(elements[i][j], show=False))
             self.mat.append(row)
 
-
     def cal_base(self, other, oper):
         assert self.m == other.m and self.n == other.n
         ret = Mat()
@@ -100,7 +99,7 @@ class Mat:
         for i in range(self.n):
             row = []
             for j in range(self.m):
-                new_node = eval("self.mat[i][j]" +oper +"other.mat[i][j]")
+                new_node = eval("self.mat[i][j]" + oper + "other.mat[i][j]")
                 new_node.show = False
                 row.append(new_node)
             ret.mat.append(row)
@@ -131,6 +130,32 @@ class Mat:
                 for k in range(self.n):
                     new_node = new_node + self.mat[i][k] * other.mat[k][j]
                     new_node.show = False
+                row.append(new_node)
+            ret.mat.append(row)
+        return ret
+
+    def grad(self, target):
+        if self is target:
+            return
+
+    @staticmethod
+    def ones(m, n):
+        return Mat.const_mat_base(m, n, 1)
+
+    @staticmethod
+    def zeros(m, n):
+        return Mat.const_mat_base(m, n, 0)
+
+    @staticmethod
+    def const_mat_base(m, n, const):
+        ret = Mat()
+        ret.m = m
+        ret.n = n
+        ret.mat = []
+        for i in range(m):
+            row = []
+            for j in range(n):
+                new_node = Node(const, show=False)
                 row.append(new_node)
             ret.mat.append(row)
         return ret
@@ -181,14 +206,19 @@ if __name__ == "__main__":
     # print(A.grad(C))
 
     # test for matrix mul
-    mat1 = Mat([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-    mat2 = Mat([[3, 1,1], [1,4, 5], [1,7, 8]])
-    mat3 = mat1 * mat2
-    mat4 = mat1 + mat2
-    mat5 = mat1 - mat2
+    # mat1 = Mat([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+    # mat2 = Mat([[3, 1, 1], [1, 4, 5], [1, 7, 8]])
+    # mat3 = mat1 * mat2
+    # mat4 = mat1 + mat2
+    # mat5 = mat1 - mat2
+    # print(mat1)
+    # print(mat2)
+    # print(mat3)
+    # print(mat4)
+    # print(mat5)
+
+    #test for ones and zeros
+    mat1 = Mat.ones(5,6)
+    mat2 = Mat.zeros(9,9)
     print(mat1)
     print(mat2)
-    print(mat3)
-    print(mat4)
-    print(mat5)
-
