@@ -135,8 +135,21 @@ class Mat:
         return ret
 
     def grad(self, target):
-        if self is target:
-            return
+        if target in self.fathers and (self.m == 1 or self.n == 1) and (target.m == 1 or target.n == 1):
+            ret = Mat()
+            ret.m = self.m
+            ret.n = target.m
+            ret.mat = []
+
+            for i in range(ret.m):
+                row = []
+                for j in range(ret.n):
+                    none_node = self.mat[i][0].grad(target.mat[j][0])
+                    row.append(none_node)
+                ret.mat.append(row)
+            return ret
+        else:
+            raise NotImplementedError
 
     @staticmethod
     def ones(m, n):
@@ -147,7 +160,11 @@ class Mat:
         return Mat.const_mat_base(m, n, 0)
 
     @staticmethod
-    def const_mat_base(m, n, const):
+    def eye(m ,n):
+        return Mat.const_mat_base(m, n, 1, True)
+
+    @staticmethod
+    def const_mat_base(m, n, const, eye=False):
         ret = Mat()
         ret.m = m
         ret.n = n
@@ -155,7 +172,13 @@ class Mat:
         for i in range(m):
             row = []
             for j in range(n):
-                new_node = Node(const, show=False)
+                if eye:
+                    if i == j:
+                        new_node = Node(1, show=False)
+                    else:
+                        new_node = Node(0, show=False)
+                else:
+                    new_node = Node(const, show=False)
                 row.append(new_node)
             ret.mat.append(row)
         return ret
@@ -217,8 +240,23 @@ if __name__ == "__main__":
     # print(mat4)
     # print(mat5)
 
-    #test for ones and zeros
-    mat1 = Mat.ones(5,6)
-    mat2 = Mat.zeros(9,9)
+    #test for ones and zeros and eye
+    # mat1 = Mat.ones(5,6)
+    # mat2 = Mat.zeros(9,9)
+    # mat3 = Mat.eye(6,4)
+    # print(mat1)
+    # print(mat2)
+    # print(mat3)
+
+    # test for mat grad
+    mat1 = Mat([[2,3,4],[5,6,8]])
+    mat2 = Mat([[2],[3],[4]])
+    mat3 = mat1 * mat2
+    print("mat1")
     print(mat1)
+    print("mat2")
     print(mat2)
+    print("mat3")
+    print(mat3)
+    print("partial mat3 partial mat2")
+    print(mat3.grad(mat2))
