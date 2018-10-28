@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0fab713-e979-4d03-b0cf-853a8365c026" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/X.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/X.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/demo.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,19 +12,19 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/X$demo.coverage" NAME="demo Coverage Results" MODIFIED="1540600198193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/X$demo.coverage" NAME="demo Coverage Results" MODIFIED="1540770752897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-589927538">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.8" value="3" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -42,13 +42,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="md" value="60" />
-          <entry key="py" value="6042" />
+          <entry key="py" value="6336" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="60" />
-          <entry key="Python" value="6042" />
+          <entry key="Python" value="6336" />
         </counts>
       </usages-collector>
     </session>
@@ -58,16 +58,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/demo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="251" column="31" selection-start-line="251" selection-start-column="31" selection-end-line="251" selection-end-column="31" />
+            <state relative-caret-position="269">
+              <caret line="183" column="18" lean-forward="true" selection-start-line="183" selection-start-column="18" selection-end-line="183" selection-end-column="18" />
               <folding>
-                <marker date="1540600223452" expanded="true" signature="2074:5481" ph="..." />
-                <marker date="1540600223452" expanded="true" signature="2578:3149" ph="..." />
-                <marker date="1540600223452" expanded="true" signature="3174:5347" ph="..." />
-                <marker date="1540600223452" expanded="true" signature="3246:3293" ph="..." />
-                <marker date="1540600223452" expanded="true" signature="3977:4516" ph="..." />
-                <marker date="1540600223452" expanded="true" signature="4762:4768" ph="..." />
-                <marker date="1540600223452" expanded="true" signature="4829:5347" ph="..." />
+                <marker date="1540771076895" expanded="true" signature="2074:5596" ph="..." />
+                <marker date="1540771076895" expanded="true" signature="2578:3149" ph="..." />
+                <marker date="1540771076895" expanded="true" signature="3174:5462" ph="..." />
+                <marker date="1540771076895" expanded="true" signature="3246:3293" ph="..." />
+                <marker date="1540771076895" expanded="true" signature="3977:4437" ph="..." />
+                <marker date="1540771076895" expanded="true" signature="4683:4689" ph="..." />
+                <marker date="1540771076895" expanded="true" signature="4750:5462" ph="..." />
+                <marker date="1540771076895" expanded="true" signature="5280:5462" ph="..." />
               </folding>
             </state>
           </provider>
@@ -137,6 +138,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -153,7 +155,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -240,12 +241,12 @@
     <frame x="55" y="30" width="1865" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19669421" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19889808" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3286026" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286026" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.30401736" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -254,14 +255,14 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.33515283" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.33624455" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32969433" />
-      <window_info anchor="right" x="0" y="0" width="416" height="850" id="Documentation" side_tool="true" weight="0.3294766" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" x="0" y="0" width="416" height="850" id="Documentation" order="5" side_tool="true" weight="0.3294766" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,16 +274,17 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main/demo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="251" column="31" selection-start-line="251" selection-start-column="31" selection-end-line="251" selection-end-column="31" />
+        <state relative-caret-position="269">
+          <caret line="183" column="18" lean-forward="true" selection-start-line="183" selection-start-column="18" selection-end-line="183" selection-end-column="18" />
           <folding>
-            <marker date="1540600223452" expanded="true" signature="2074:5481" ph="..." />
-            <marker date="1540600223452" expanded="true" signature="2578:3149" ph="..." />
-            <marker date="1540600223452" expanded="true" signature="3174:5347" ph="..." />
-            <marker date="1540600223452" expanded="true" signature="3246:3293" ph="..." />
-            <marker date="1540600223452" expanded="true" signature="3977:4516" ph="..." />
-            <marker date="1540600223452" expanded="true" signature="4762:4768" ph="..." />
-            <marker date="1540600223452" expanded="true" signature="4829:5347" ph="..." />
+            <marker date="1540771076895" expanded="true" signature="2074:5596" ph="..." />
+            <marker date="1540771076895" expanded="true" signature="2578:3149" ph="..." />
+            <marker date="1540771076895" expanded="true" signature="3174:5462" ph="..." />
+            <marker date="1540771076895" expanded="true" signature="3246:3293" ph="..." />
+            <marker date="1540771076895" expanded="true" signature="3977:4437" ph="..." />
+            <marker date="1540771076895" expanded="true" signature="4683:4689" ph="..." />
+            <marker date="1540771076895" expanded="true" signature="4750:5462" ph="..." />
+            <marker date="1540771076895" expanded="true" signature="5280:5462" ph="..." />
           </folding>
         </state>
       </provider>

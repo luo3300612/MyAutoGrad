@@ -135,7 +135,7 @@ class Mat:
         return ret
 
     def grad(self, target):
-        if target in self.fathers and (self.m == 1 or self.n == 1) and (target.m == 1 or target.n == 1):
+        if target.n == 1:
             ret = Mat()
             ret.m = self.m
             ret.n = target.m
@@ -160,7 +160,7 @@ class Mat:
         return Mat.const_mat_base(m, n, 0)
 
     @staticmethod
-    def eye(m ,n):
+    def eye(m, n):
         return Mat.const_mat_base(m, n, 1, True)
 
     @staticmethod
@@ -182,6 +182,17 @@ class Mat:
                 row.append(new_node)
             ret.mat.append(row)
         return ret
+
+    def T(self):
+        Nodes = []
+        for j in range(self.n):
+            for i in range(self.m):
+                Nodes.append(self.mat[i][j])
+
+
+
+        self.m, self.n = self.n, self.m
+
 
     def __repr__(self):
         to_show = [repr(item) for item in self.mat]
@@ -240,7 +251,7 @@ if __name__ == "__main__":
     # print(mat4)
     # print(mat5)
 
-    #test for ones and zeros and eye
+    # test for ones and zeros and eye
     # mat1 = Mat.ones(5,6)
     # mat2 = Mat.zeros(9,9)
     # mat3 = Mat.eye(6,4)
@@ -249,14 +260,20 @@ if __name__ == "__main__":
     # print(mat3)
 
     # test for mat grad
-    mat1 = Mat([[2,3,4],[5,6,8]])
-    mat2 = Mat([[2],[3],[4]])
-    mat3 = mat1 * mat2
-    print("mat1")
-    print(mat1)
-    print("mat2")
-    print(mat2)
-    print("mat3")
-    print(mat3)
-    print("partial mat3 partial mat2")
-    print(mat3.grad(mat2))
+    # mat1 = Mat([[2,3,4],[5,6,8]])
+    # mat2 = Mat([[2],[3],[4]])
+    # mat3 = mat1 * mat2
+    # print("mat1")
+    # print(mat1)
+    # print("mat2")
+    # print(mat2)
+    # print("mat3")
+    # print(mat3)
+    # print("partial mat3 partial mat2")
+    # print(mat3.grad(mat2))
+
+    # test for quadratic form
+    matA = Mat([[1, 2, 3], [1, 1, 1], [2, 1, 1]])
+    matx = Mat([[1], [2], [3]])
+    matC = matx
+    matA
