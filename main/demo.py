@@ -135,6 +135,12 @@ class Mat:
         return ret
 
     def grad(self, target):
+        """
+        grad inplement gradient of a Mat to a Mat (self.n == 1),
+        we use Denominator layout which means parital Ax partial x is A.T()
+        :param target:
+        :return: partial self partial target
+        """
         if target.n == 1:
             ret = Mat()
             ret.m = target.m
