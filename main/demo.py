@@ -137,14 +137,14 @@ class Mat:
     def grad(self, target):
         if target.n == 1:
             ret = Mat()
-            ret.m = self.m
-            ret.n = target.m
+            ret.m = target.m
+            ret.n = self.m
             ret.mat = []
 
             for i in range(ret.m):
                 row = []
                 for j in range(ret.n):
-                    none_node = self.mat[i][0].grad(target.mat[j][0])
+                    none_node = self.mat[j][0].grad(target.mat[i][0])
                     row.append(none_node)
                 ret.mat.append(row)
             return ret
@@ -267,17 +267,17 @@ if __name__ == "__main__":
     # print(mat3)
 
     # test for mat grad
-    # mat1 = Mat([[2,3,4],[5,6,8]])
-    # mat2 = Mat([[2],[3],[4]])
-    # mat3 = mat1 * mat2
-    # print("mat1")
-    # print(mat1)
-    # print("mat2")
-    # print(mat2)
-    # print("mat3")
-    # print(mat3)
-    # print("partial mat3 partial mat2")
-    # print(mat3.grad(mat2))
+    mat1 = Mat([[2,3,4],[5,6,8]])
+    mat2 = Mat([[2],[3],[4]])
+    mat3 = mat1 * mat2
+    print("mat1")
+    print(mat1)
+    print("mat2")
+    print(mat2)
+    print("mat3")
+    print(mat3)
+    print("partial mat3 partial mat2")
+    print(mat3.grad(mat2))
 
 
     # test for .T
@@ -287,7 +287,10 @@ if __name__ == "__main__":
     # print(matA)
 
     # test for quadratic form
-    # matA = Mat([[1, 2, 3], [1, 1, 1], [2, 1, 1]])
+    # matA = Mat([[1, 2, 3], [2, 1, 1], [3, 1, 1]])
     # matx = Mat([[1], [2], [3]])
-    # matC = matx
-    # matA
+    # matC = matx.T() * matA * matx
+    # print("matC\n",matC)
+    # print("C.grad(x)\n",matC.grad(matx))
+    # print("matA * matx\n",matA*matx)
+    # print("matA.T * matx\n",matA.T()*matx)
