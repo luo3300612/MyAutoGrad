@@ -188,11 +188,18 @@ class Mat:
         for j in range(self.n):
             for i in range(self.m):
                 Nodes.append(self.mat[i][j])
+        ret = Mat()
+        ret.mat = []
+        ret.m, ret.n = self.n, self.m
 
-
-
-        self.m, self.n = self.n, self.m
-
+        index = 0
+        for i in range(ret.m):
+            row = []
+            for j in range(ret.n):
+                row.append(Nodes[index])
+                index += 1
+            ret.mat.append(row)
+        return ret
 
     def __repr__(self):
         to_show = [repr(item) for item in self.mat]
@@ -272,8 +279,15 @@ if __name__ == "__main__":
     # print("partial mat3 partial mat2")
     # print(mat3.grad(mat2))
 
+
+    # test for .T
+    # matA = Mat([[1, 2, 3], [1, 1, 1]])
+    # print(matA)
+    # print(matA.T())
+    # print(matA)
+
     # test for quadratic form
-    matA = Mat([[1, 2, 3], [1, 1, 1], [2, 1, 1]])
-    matx = Mat([[1], [2], [3]])
-    matC = matx
-    matA
+    # matA = Mat([[1, 2, 3], [1, 1, 1], [2, 1, 1]])
+    # matx = Mat([[1], [2], [3]])
+    # matC = matx
+    # matA
