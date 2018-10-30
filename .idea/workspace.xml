@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0fab713-e979-4d03-b0cf-853a8365c026" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/main/LinearRegression.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/demo.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -11,63 +13,75 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/X$demo.coverage" NAME="demo Coverage Results" MODIFIED="1540771978311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/X$demo.coverage" NAME="demo Coverage Results" MODIFIED="1540856554896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-589927538">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="3" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="md" value="1" />
-          <entry key="py" value="3" />
+          <entry key="py" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Markdown" value="1" />
-          <entry key="Python" value="3" />
+          <entry key="Python" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="LinearRegression" value="107" />
           <entry key="md" value="60" />
-          <entry key="py" value="7055" />
+          <entry key="py" value="8567" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="60" />
-          <entry key="Python" value="7055" />
+          <entry key="Python" value="8674" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/demo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="139" column="75" selection-start-line="139" selection-start-column="75" selection-end-line="139" selection-end-column="75" />
+            <state relative-caret-position="153">
+              <caret line="221" lean-forward="true" selection-start-line="221" selection-end-line="221" />
               <folding>
-                <marker date="1540772590828" expanded="true" signature="2074:6089" ph="..." />
-                <marker date="1540772590828" expanded="true" signature="2578:3149" ph="..." />
-                <marker date="1540772590828" expanded="true" signature="3174:5955" ph="..." />
-                <marker date="1540772590828" expanded="true" signature="3246:3293" ph="..." />
-                <marker date="1540772590828" expanded="true" signature="4210:4670" ph="..." />
-                <marker date="1540772590828" expanded="true" signature="4916:4922" ph="..." />
-                <marker date="1540772590828" expanded="true" signature="4983:5955" ph="..." />
-                <marker date="1540772590828" expanded="true" signature="5513:5955" ph="..." />
+                <marker date="1540858104668" expanded="true" signature="2070:7026" ph="..." />
+                <marker date="1540858104668" expanded="true" signature="2574:3145" ph="..." />
+                <marker date="1540858104668" expanded="true" signature="3170:6892" ph="..." />
+                <marker date="1540858104668" expanded="true" signature="3242:3289" ph="..." />
+                <marker date="1540858104668" expanded="true" signature="4479:4513" ph="..." />
+                <marker date="1540858104668" expanded="true" signature="6684:6892" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main/LinearRegression.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="382">
+              <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -106,6 +120,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>/</find>
+      <find>y</find>
+      <find>new</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -116,6 +132,7 @@
       <list>
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/main/demo.py" />
+        <option value="$PROJECT_DIR$/main/LinearRegression.py" />
       </list>
     </option>
   </component>
@@ -137,7 +154,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -154,6 +170,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -172,7 +189,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.LinearRegression">
+    <configuration name="LinearRegression" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="X" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/LinearRegression.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="X" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -217,8 +253,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.demo" />
+      <item itemvalue="Python.LinearRegression" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.LinearRegression" />
         <item itemvalue="Python.demo" />
       </list>
     </recent_temporary>
@@ -240,7 +281,7 @@
     <frame x="55" y="30" width="1865" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19889808" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20110193" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -254,12 +295,12 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.33624455" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32969433" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.33733624" />
+      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.32969433" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
+      <window_info active="true" anchor="right" id="SciView" order="3" visible="true" weight="0.3294766" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" x="0" y="0" width="416" height="850" id="Documentation" order="5" side_tool="true" weight="0.3294766" />
     </layout>
@@ -271,20 +312,10 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main/demo.py">
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/-1275405023/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="139" column="75" selection-start-line="139" selection-start-column="75" selection-end-line="139" selection-end-column="75" />
-          <folding>
-            <marker date="1540772590828" expanded="true" signature="2074:6089" ph="..." />
-            <marker date="1540772590828" expanded="true" signature="2578:3149" ph="..." />
-            <marker date="1540772590828" expanded="true" signature="3174:5955" ph="..." />
-            <marker date="1540772590828" expanded="true" signature="3246:3293" ph="..." />
-            <marker date="1540772590828" expanded="true" signature="4210:4670" ph="..." />
-            <marker date="1540772590828" expanded="true" signature="4916:4922" ph="..." />
-            <marker date="1540772590828" expanded="true" signature="4983:5955" ph="..." />
-            <marker date="1540772590828" expanded="true" signature="5513:5955" ph="..." />
-          </folding>
+        <state relative-caret-position="28944">
+          <caret line="1608" column="40" selection-start-line="1608" selection-start-column="39" selection-end-line="1608" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -298,10 +329,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/-1275405023/builtins.py">
+    <entry file="file://$PROJECT_DIR$/main/demo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28944">
-          <caret line="1608" column="40" selection-start-line="1608" selection-start-column="39" selection-end-line="1608" selection-end-column="40" />
+        <state relative-caret-position="153">
+          <caret line="221" lean-forward="true" selection-start-line="221" selection-end-line="221" />
+          <folding>
+            <marker date="1540858104668" expanded="true" signature="2070:7026" ph="..." />
+            <marker date="1540858104668" expanded="true" signature="2574:3145" ph="..." />
+            <marker date="1540858104668" expanded="true" signature="3170:6892" ph="..." />
+            <marker date="1540858104668" expanded="true" signature="3242:3289" ph="..." />
+            <marker date="1540858104668" expanded="true" signature="4479:4513" ph="..." />
+            <marker date="1540858104668" expanded="true" signature="6684:6892" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/LinearRegression.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

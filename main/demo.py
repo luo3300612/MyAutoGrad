@@ -1,4 +1,4 @@
-import numpy as np
+import numbers
 
 
 class Node:
@@ -96,9 +96,9 @@ class Mat:
         other.fathers.append(ret)
         self.oper = oper
 
-        for i in range(self.n):
+        for i in range(self.m):
             row = []
-            for j in range(self.m):
+            for j in range(self.n):
                 new_node = eval("self.mat[i][j]" + oper + "other.mat[i][j]")
                 new_node.show = False
                 row.append(new_node)
@@ -112,27 +112,40 @@ class Mat:
         return self.cal_base(other, '-')
 
     def __mul__(self, other):
-        assert self.n == other.m
-        ret = Mat()
-        ret.m = self.m
-        ret.n = other.n
-        ret.mat = []
+        if isinstance(other,Mat):
+            try:
+                assert self.n == other.m
+            except AssertionError:
+                print(f"Dim not match:{self.m}*{self.n} mul {other.m}*{other.n}")
+                raise AssertionError
+            ret = Mat()
+            ret.m = self.m
+            ret.n = other.n
+            ret.mat = []
 
-        ret.fathers = [self, other]
-        self.chirdren.append(ret)
-        other.fathers.append(ret)
-        self.oper = '*'
+            ret.fathers = [self, other]
+            self.chirdren.append(ret)
+            other.fathers.append(ret)
+            self.oper = '*'
 
-        for i in range(ret.m):
-            row = []
-            for j in range(ret.n):
-                new_node = Node(0, show=False)
-                for k in range(self.n):
-                    new_node = new_node + self.mat[i][k] * other.mat[k][j]
-                    new_node.show = False
-                row.append(new_node)
-            ret.mat.append(row)
-        return ret
+            for i in range(ret.m):
+                row = []
+                for j in range(ret.n):
+                    new_node = Node(0, show=False)
+                    for k in range(self.n):
+                        new_node = new_node + self.mat[i][k] * other.mat[k][j]
+                        new_node.show = False
+                    row.append(new_node)
+                ret.mat.append(row)
+            return ret
+        elif isinstance(other, numbers.Real):
+            for i in range(self.m):
+                for j in range(self.n):
+                    self.mat[i][j].value = self.mat[i][j].value * other
+            return self
+
+    def __rmul__(self, other):
+        return self * other
 
     def grad(self, target):
         """
@@ -150,8 +163,8 @@ class Mat:
             for i in range(ret.m):
                 row = []
                 for j in range(ret.n):
-                    none_node = self.mat[j][0].grad(target.mat[i][0])
-                    row.append(none_node)
+                    new_node = Node(self.mat[j][0].grad(target.mat[i][0]),show=False)
+                    row.append(new_node)
                 ret.mat.append(row)
             return ret
         else:
@@ -205,6 +218,20 @@ class Mat:
                 row.append(Nodes[index])
                 index += 1
             ret.mat.append(row)
+        return ret
+
+    def zero_grad(self):
+        for i in range(self.m):
+            for j in range(self.n):
+                self.mat[i][j].fathers = []
+
+    def values(self):
+        ret = []
+        for i in range(self.m):
+            row = []
+            for j in range(self.n):
+                row.append(self.mat[i][j].value)
+            ret.append(row)
         return ret
 
     def __repr__(self):
