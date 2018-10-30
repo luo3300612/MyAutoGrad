@@ -111,6 +111,7 @@ class Mat:
     def __sub__(self, other):
         return self.cal_base(other, '-')
 
+    #TODO Need to make sure gradient when do scalar multiplication
     def __mul__(self, other):
         if isinstance(other,Mat):
             try:

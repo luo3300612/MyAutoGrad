@@ -2,6 +2,8 @@ from demo import Mat
 import matplotlib.pyplot as plt
 import numpy as np
 
+
+# prepare data
 ones = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 y = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -11,11 +13,13 @@ label = Mat([y_err]).T()
 print(y)
 
 X = Mat([ones, x]).T()
-weight = Mat.zeros(2, 1)
 
+# initiate
+weight = Mat.zeros(2, 1)
 max_iteration = 200
 alpha = 0.0001
 
+# start to train
 for epoch in range(max_iteration):
     weight.zero_grad()
     pred = X * weight
