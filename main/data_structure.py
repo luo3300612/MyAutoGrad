@@ -83,7 +83,7 @@ class Mat:
         self.m = 0
         self.n = 0
         self.fathers = []
-        self.chirdren = []
+        self.children = []
         self.oper = None
         if elements is not None:
             self.m = len(elements)
@@ -103,7 +103,7 @@ class Mat:
         ret.mat = []
 
         ret.fathers = [self, other]
-        self.chirdren.append(ret)
+        self.children.append(ret)
         other.fathers.append(ret)
         self.oper = oper
 
@@ -136,7 +136,7 @@ class Mat:
             ret.mat = []
 
             ret.fathers = [self, other]
-            self.chirdren.append(ret)
+            self.children.append(ret)
             other.fathers.append(ret)
             self.oper = '*'
 
@@ -159,6 +159,7 @@ class Mat:
     def __rmul__(self, other):
         return self * other
 
+    #TODO is return as list of list of Node appropriate?
     def grad(self, target):
         """
         grad inplement gradient of a Mat to a Mat (self.n == 1),
@@ -166,21 +167,23 @@ class Mat:
         :param target:
         :return: partial self partial target
         """
-        if target.n == 1:
-            ret = Mat()
-            ret.m = target.m
-            ret.n = self.m
-            ret.mat = []
+        if len(self.fathers) == 2:
+            if target.n == 1:
+                ret = Mat()
+                ret.m = target.m
+                ret.n = self.m
+                ret.mat = []
 
-            for i in range(ret.m):
-                row = []
-                for j in range(ret.n):
-                    new_node = Node(self.mat[j][0].grad(target.mat[i][0]), show=False)
-                    row.append(new_node)
-                ret.mat.append(row)
-            return ret
-        else:
-            raise NotImplementedError
+                for i in range(ret.m):
+                    row = []
+                    for j in range(ret.n):
+                        new_node = Node(self.mat[j][0].grad(target.mat[i][0]), show=False)
+                        row.append(new_node)
+                    ret.mat.append(row)
+                return ret
+            else:
+                raise NotImplementedError
+
 
     @staticmethod
     def ones(m, n):
