@@ -48,9 +48,9 @@ if __name__ == "__main__":
     # print(node5.grad(node2))
 
     # test for Mat log exp
-    # mat1 = Mat([[1,2],[2,3],[2,math.e]])
-    # print(op.log(mat1))
-    # print()
-    # print(op.exp(mat1))
+    mat1 = Mat([[1,2],[2,3],[2,math.e]])
+    print(format(op.log(mat1),'.3f'))
+    print()
+    print(format(op.exp(mat1),'.2f'))
 
 
