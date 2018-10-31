@@ -78,8 +78,6 @@ class Node:
 
 
 class Mat:
-    # TODO randome matrix generator
-    # TODO Mat Iterable
     # TODO Return one place
 
     def __init__(self, elements=None):
@@ -161,7 +159,6 @@ class Mat:
         if isinstance(other, numbers.Real):
             return self.scalar_oper_right(other, '/')
 
-    # TODO Need to make sure gradient when do scalar multiplication
     def __mul__(self, other):
         if isinstance(other, Mat):
             try:
@@ -179,10 +176,14 @@ class Mat:
             for i in range(ret.m):
                 row = []
                 for j in range(ret.n):
-                    new_node = Node(0, show=False)
+                    new_node = Node(0)
                     for k in range(self.n):
-                        new_node = new_node + self.mat[i][k] * other.mat[k][j]
-                        new_node.show = False
+                        try:
+                            new_node = new_node + self.mat[i][k] * other.mat[k][j]
+                        except:
+                            print(type(self.mat[i][k]))
+                            print(type(other.mat[k][j]))
+                            raise AttributeError
                     row.append(new_node)
                 ret.mat.append(row)
             return ret
@@ -191,6 +192,9 @@ class Mat:
 
     def __rmul__(self, other):
         return self * other
+
+    def __neg__(self):
+        return 0 - self
 
     def scalar_oper_exchangeable(self, other, oper):
         """
