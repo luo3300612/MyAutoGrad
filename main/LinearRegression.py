@@ -1,4 +1,4 @@
-from demo import Mat
+from data_structure import Mat
 import matplotlib.pyplot as plt
 import numpy as np
 
