@@ -1,4 +1,5 @@
 import numbers
+import math
 
 
 class Node:
@@ -10,18 +11,18 @@ class Node:
         self.show = show
 
     def __add__(self, other):
-        return self.cal_base(other, '+')
+        return self.oper_base(other, '+')
 
     def __sub__(self, other):
-        return self.cal_base(other, '-')
+        return self.oper_base(other, '-')
 
     def __mul__(self, other):
-        return self.cal_base(other, '*')
+        return self.oper_base(other, '*')
 
     def __truediv__(self, other):
-        return self.cal_base(other, '/')
+        return self.oper_base(other, '/')
 
-    def cal_base(self, other, oper):
+    def oper_base(self, other, oper):
         """base of elementary calculation"""
         ret = Node()
         ret.value = eval("self.value" + oper + "other.value")
@@ -37,7 +38,14 @@ class Node:
             return 1
         elif len(self.fathers) is 0:
             return 0
-        else:
+        elif len(self.fathers) == 1:
+            gradient = 0
+            if self.oper == "log":
+                gradient = 1/self.fathers[0].value
+            elif self.oper == "exp":
+                gradient = self.value
+            return gradient * self.fathers[0].grad(target)
+        elif len(self.fathers) == 2:
             gradient_left = 0
             gradient_right = 0
 
@@ -57,10 +65,13 @@ class Node:
             return gradient_left * self.fathers[0].grad(target) + \
                    gradient_right * self.fathers[1].grad(target)
 
+
     def __repr__(self):
         if self.show:
-            if len(self.fathers) is not 0:
+            if len(self.fathers) == 2:
                 return f"""<Node,value:{self.value}={self.fathers[0].value}{self.oper}{self.fathers[1].value}>"""
+            elif len(self.fathers) == 1:
+                return f"""<Node,value:{self.value}={self.oper}({self.fathers[0].value})>"""
             else:
                 return f"""<Node,value={self.value},ROOT>"""
         else:
@@ -111,9 +122,9 @@ class Mat:
     def __sub__(self, other):
         return self.cal_base(other, '-')
 
-    #TODO Need to make sure gradient when do scalar multiplication
+    # TODO Need to make sure gradient when do scalar multiplication
     def __mul__(self, other):
-        if isinstance(other,Mat):
+        if isinstance(other, Mat):
             try:
                 assert self.n == other.m
             except AssertionError:
@@ -164,7 +175,7 @@ class Mat:
             for i in range(ret.m):
                 row = []
                 for j in range(ret.n):
-                    new_node = Node(self.mat[j][0].grad(target.mat[i][0]),show=False)
+                    new_node = Node(self.mat[j][0].grad(target.mat[i][0]), show=False)
                     row.append(new_node)
                 ret.mat.append(row)
             return ret
@@ -301,18 +312,17 @@ if __name__ == "__main__":
     # print(mat3)
 
     # test for mat grad
-    mat1 = Mat([[2,3,4],[5,6,8]])
-    mat2 = Mat([[2],[3],[4]])
-    mat3 = mat1 * mat2
-    print("mat1")
-    print(mat1)
-    print("mat2")
-    print(mat2)
-    print("mat3")
-    print(mat3)
-    print("partial mat3 partial mat2")
-    print(mat3.grad(mat2))
-
+    # mat1 = Mat([[2, 3, 4], [5, 6, 8]])
+    # mat2 = Mat([[2], [3], [4]])
+    # mat3 = mat1 * mat2
+    # print("mat1")
+    # print(mat1)
+    # print("mat2")
+    # print(mat2)
+    # print("mat3")
+    # print(mat3)
+    # print("partial mat3 partial mat2")
+    # print(mat3.grad(mat2))
 
     # test for .T
     # matA = Mat([[1, 2, 3], [1, 1, 1]])
@@ -328,3 +338,8 @@ if __name__ == "__main__":
     # print("C.grad(x)\n",matC.grad(matx))
     # print("matA * matx\n",matA*matx)
     # print("matA.T * matx\n",matA.T()*matx)
+
+    # test for log and exp
+    node1 = Node(5)
+    node2 = node1.log()
+
