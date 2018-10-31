@@ -3,7 +3,7 @@ import math
 
 
 class Node:
-    def __init__(self, num=None, show=True):
+    def __init__(self, num=None, show=False):
         self.value = num
         self.fathers = []
         self.children = []
@@ -41,7 +41,7 @@ class Node:
         elif len(self.fathers) == 1:
             gradient = 0
             if self.oper == "log":
-                gradient = 1/self.fathers[0].value
+                gradient = 1 / self.fathers[0].value
             elif self.oper == "exp":
                 gradient = self.value
             return gradient * self.fathers[0].grad(target)
@@ -65,7 +65,6 @@ class Node:
             return gradient_left * self.fathers[0].grad(target) + \
                    gradient_right * self.fathers[1].grad(target)
 
-
     def __repr__(self):
         if self.show:
             if len(self.fathers) == 2:
@@ -79,6 +78,10 @@ class Node:
 
 
 class Mat:
+    # TODO randome matrix generator
+    # TODO Mat Iterable
+    # TODO Return one place
+
     def __init__(self, elements=None):
         self.m = 0
         self.n = 0
@@ -91,21 +94,34 @@ class Mat:
         self.mat = []
         for i in range(self.m):
             row = []
+            if len(elements[i]) != self.n:
+                raise AttributeError("Dim2 is not identical")
             for j in range(self.n):
                 row.append(Node(elements[i][j], show=False))
             self.mat.append(row)
 
+    @classmethod
+    def gen_ret(cls, m, n, mat=None, fathers=None, oper=None):
+        ret = Mat()
+        ret.m = m
+        ret.n = n
+        ret.mat = [] if mat is None else mat
+        ret.fathers = [] if fathers is None else fathers
+        if fathers is not None:
+            for father in fathers:
+                if isinstance(father, cls):
+                    father.children.append(ret)
+        ret.oper = None if oper is None else oper
+        return ret
+
     def cal_base(self, other, oper):
         assert self.m == other.m and self.n == other.n
-        ret = Mat()
-        ret.m = self.m
-        ret.n = self.n
-        ret.mat = []
 
-        ret.fathers = [self, other]
-        self.children.append(ret)
-        other.fathers.append(ret)
-        self.oper = oper
+        ret = Mat.gen_ret(m=self.m,
+                          n=self.n,
+                          fathers=[self, other],
+                          oper=oper
+                          )
 
         for i in range(self.m):
             row = []
@@ -117,10 +133,33 @@ class Mat:
         return ret
 
     def __add__(self, other):
-        return self.cal_base(other, '+')
+        if isinstance(other, numbers.Real):
+            return self.scalar_oper_exchangeable(other, '+')
+        else:
+            return self.cal_base(other, '+')
+
+    def __radd__(self, other):
+        return self + other
 
     def __sub__(self, other):
-        return self.cal_base(other, '-')
+        if isinstance(other, numbers.Real):
+            return self.scalar_oper_exchangeable(other, '-')
+        else:
+            return self.cal_base(other, '-')
+
+    def __rsub__(self, other):
+        if isinstance(other, numbers.Real):
+            return self.scalar_oper_right(other, '-')
+
+    def __truediv__(self, other):
+        if isinstance(other, numbers.Real):
+            return self.scalar_oper_exchangeable(other, '/')
+        else:
+            raise AttributeError
+
+    def __rtruediv__(self, other):
+        if isinstance(other, numbers.Real):
+            return self.scalar_oper_right(other, '/')
 
     # TODO Need to make sure gradient when do scalar multiplication
     def __mul__(self, other):
@@ -130,15 +169,12 @@ class Mat:
             except AssertionError:
                 print(f"Dim not match:{self.m}*{self.n} mul {other.m}*{other.n}")
                 raise AssertionError
-            ret = Mat()
-            ret.m = self.m
-            ret.n = other.n
-            ret.mat = []
 
-            ret.fathers = [self, other]
-            self.children.append(ret)
-            other.fathers.append(ret)
-            self.oper = '*'
+            ret = Mat.gen_ret(m=self.m,
+                              n=other.n,
+                              fathers=[self, other],
+                              oper='*'
+                              )
 
             for i in range(ret.m):
                 row = []
@@ -151,15 +187,60 @@ class Mat:
                 ret.mat.append(row)
             return ret
         elif isinstance(other, numbers.Real):
-            for i in range(self.m):
-                for j in range(self.n):
-                    self.mat[i][j].value = self.mat[i][j].value * other
-            return self
+            return self.scalar_oper_exchangeable(other, '*')
 
     def __rmul__(self, other):
         return self * other
 
-    #TODO is return as list of list of Node appropriate?
+    def scalar_oper_exchangeable(self, other, oper):
+        """
+        I treat scalar oper by simply create Node for each element of
+        Mat and do operation.
+        I do not record result as chirldren of this scalar because I
+        don't create any Mat for the scalar.
+
+        Another possible implementation:
+        transfer scalar operation to Mat operation by create a scalar
+        matrix
+        """
+        ret = Mat.gen_ret(m=self.m,
+                          n=self.n,
+                          fathers=[self, other],
+                          oper=oper
+                          )
+
+        for i in range(self.m):
+            row = []
+            for j in range(self.n):
+                new_node = eval("self.mat[i][j]" +
+                                oper +
+                                "Node(other)"
+                                )
+                row.append(new_node)
+            ret.mat.append(row)
+        return ret
+
+    def scalar_oper_right(self, other, oper):
+        ret = Mat.gen_ret(m=self.m,
+                          n=self.n,
+                          fathers=[other, self],
+                          oper=oper
+                          )
+        for i in range(self.m):
+            row = []
+            for j in range(self.n):
+                new_node = eval("Node(other)" +
+                                oper +
+                                "self.mat[i][j]"
+                                )
+                row.append(new_node)
+            ret.mat.append(row)
+        return ret
+
+    def __getitem__(self, item):
+        return self.mat[item]
+
+    # TODO is return as list of list of Node appropriate?
     def grad(self, target):
         """
         grad inplement gradient of a Mat to a Mat (self.n == 1),
@@ -183,7 +264,6 @@ class Mat:
                 return ret
             else:
                 raise NotImplementedError
-
 
     @staticmethod
     def ones(m, n):
@@ -248,6 +328,13 @@ class Mat:
                 row.append(self.mat[i][j].value)
             ret.append(row)
         return ret
+
+    def __format__(self, format_spec):
+        to_show = []
+        for i in range(self.m):
+            row = self[i]
+            to_show.append(repr([format(item.value, format_spec) for item in row]))
+        return '\n'.join(to_show)
 
     def __repr__(self):
         to_show = [repr(item) for item in self.mat]
@@ -343,6 +430,23 @@ if __name__ == "__main__":
     # print("matA.T * matx\n",matA.T()*matx)
 
     # test for log and exp
-    node1 = Node(5)
-    node2 = node1.log()
+    # node1 = Node(5)
+    # node2 = node1.log()
 
+    # test for Mat getitem
+    # matA = Mat([[1, 2, 3], [2, 1, 1], [3, 1, 1]])
+    # print(matA[1:3])
+
+    # test for scalar + - * /
+    matA = Mat([[1, 2, 3], [2, 3, 3]])
+    print(matA + 2)
+    print(2 + matA)
+    #
+    print(matA - 2)
+    print(2 - matA)
+
+    print(matA * 2)
+    print(2 * matA)
+
+    print(matA / 2)
+    print(2 / matA)
