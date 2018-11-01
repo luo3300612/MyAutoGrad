@@ -31,11 +31,24 @@ class op:
             for i in range(x.m):
                 row = []
                 for j in range(x.n):
-                    new_node = op.func_base(x.mat[i][j], fun)
+                    new_node = op.func_base(x[i][j], fun)
                     new_node.show = False
                     row.append(new_node)
                 ret.mat.append(row)
             return ret
+
+    @staticmethod
+    def norm_suqare(x):
+        if isinstance(x, Node):
+            ret = x * x
+        elif isinstance(x, Mat):
+            ret = Node(0)
+            for i in range(x.m):
+                for j in range(x.n):
+                    ret = ret + x[i][j] * x[i][j]
+        else:
+            raise NotImplementedError
+        return ret
 
 
 if __name__ == "__main__":
@@ -48,9 +61,13 @@ if __name__ == "__main__":
     # print(node5.grad(node2))
 
     # test for Mat log exp
-    mat1 = Mat([[1,2],[2,3],[2,math.e]])
-    print(format(op.log(mat1),'.3f'))
-    print()
-    print(format(op.exp(mat1),'.2f'))
+    # mat1 = Mat([[1, 2], [2, 3], [2, math.e]])
+    # print(format(op.log(mat1), '.3f'))
+    # print()
+    # print(format(op.exp(mat1), '.2f'))
 
-
+    # test for norm_square
+    # mat1 = Mat([[1, 2], [2, 3], [2, math.e]])
+    # print(mat1)
+    # print(op.norm_suqare(mat1))
+    # print(op.norm_suqare(mat1).grad(mat1[0][0]))
