@@ -29,6 +29,6 @@ for epoch in range(max_iteration):
     if epoch % 20 == 0:
         print(f"epoch:{epoch},loss:{loss}")
 
-plt.plot(x, y_err)
+plt.scatter(x, y_err)
 plt.plot(x, pred.T().values()[0])
 plt.show()

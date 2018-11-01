@@ -35,16 +35,16 @@ class Node:
     def grad(self, target):
         """partial self partial target"""
         if self is target:
-            return 1
+            gradient =  1
         elif len(self.fathers) is 0:
-            return 0
+            gradient =  0
         elif len(self.fathers) == 1:
             gradient = 0
             if self.oper == "log":
                 gradient = 1 / self.fathers[0].value
             elif self.oper == "exp":
                 gradient = self.value
-            return gradient * self.fathers[0].grad(target)
+            gradient = gradient * self.fathers[0].grad(target)
         elif len(self.fathers) == 2:
             gradient_left = 0
             gradient_right = 0
@@ -62,20 +62,23 @@ class Node:
                 gradient_left = 1 / self.fathers[1].value
                 gradient_right = -self.fathers[0].value / self.fathers[1].value ** 2
 
-            return gradient_left * self.fathers[0].grad(target) + \
+            gradient = gradient_left * self.fathers[0].grad(target) + \
                    gradient_right * self.fathers[1].grad(target)
+        else:
+            raise NotImplementedError
+        return gradient
 
     def __repr__(self):
         if self.show:
             if len(self.fathers) == 2:
-                return f"""<Node,value:{self.value}={self.fathers[0].value}{self.oper}{self.fathers[1].value}>"""
+                ret = f"""<Node,value:{self.value}={self.fathers[0].value}{self.oper}{self.fathers[1].value}>"""
             elif len(self.fathers) == 1:
-                return f"""<Node,value:{self.value}={self.oper}({self.fathers[0].value})>"""
+                ret = f"""<Node,value:{self.value}={self.oper}({self.fathers[0].value})>"""
             else:
-                return f"""<Node,value={self.value},ROOT>"""
+                ret = f"""<Node,value={self.value},ROOT>"""
         else:
-            return f"{self.value}"
-
+            ret = f"{self.value}"
+        return ret
 
 class Mat:
     # TODO Return one place
