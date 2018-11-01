@@ -13,7 +13,7 @@ for i, cord in enumerate(zip(x, y)):
         label[i] = 1
     else:
         label[i] = 0
-    if np.random.uniform(0, 1) > 0.95:
+    if np.random.uniform(0, 1) > 0.90:
         label[i] = 1 - label[i]
 
 plt.scatter(x[label == 1], y[label == 1])
@@ -27,11 +27,11 @@ X = np.vstack((X, y))
 mat_X = Mat(X).T()
 mat_label = Mat([label]).T()
 weight = Mat.zeros(3, 1)
-
+lam = 0.01
 
 for epoch in range(max_iteration):
     weight.zero_grad()
-    loss = - mat_label.T() * op.log(1 / (1 + op.exp(-mat_X * weight))) - (1 - mat_label).T() * op.log(1 - 1 / (1 + op.exp(-mat_X * weight)))
+    loss = - mat_label.T() * op.log(1 / (1 + op.exp(-mat_X * weight))) - (1 - mat_label).T() * op.log(1 - 1 / (1 + op.exp(-mat_X * weight))) + lam * weight.T() * weight
 
     weight = weight - alpha * loss.grad(weight)
 
