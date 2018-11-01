@@ -254,10 +254,9 @@ class Mat:
         """
         if len(self.fathers) == 2:
             if target.n == 1:
-                ret = Mat()
-                ret.m = target.m
-                ret.n = self.m
-                ret.mat = []
+                ret = Mat.gen_ret(m=target.m,
+                                  n=self.m,
+                                  )
 
                 for i in range(ret.m):
                     row = []
@@ -283,10 +282,9 @@ class Mat:
 
     @staticmethod
     def const_mat_base(m, n, const, eye=False):
-        ret = Mat()
-        ret.m = m
-        ret.n = n
-        ret.mat = []
+        ret = Mat.gen_ret(m=m,
+                          n=n,
+                          )
         for i in range(m):
             row = []
             for j in range(n):
@@ -301,14 +299,15 @@ class Mat:
             ret.mat.append(row)
         return ret
 
+    # TODO optimization
     def T(self):
         Nodes = []
         for j in range(self.n):
             for i in range(self.m):
                 Nodes.append(self.mat[i][j])
-        ret = Mat()
-        ret.mat = []
-        ret.m, ret.n = self.n, self.m
+        ret = Mat.gen_ret(m=self.n,
+                          n=self.m,
+                          )
 
         index = 0
         for i in range(ret.m):
