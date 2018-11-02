@@ -2,6 +2,7 @@ from DataStructure import Mat, Node
 import numpy as np
 import matplotlib.pyplot as plt
 from op import op
+from datetime import datetime
 
 x = np.random.uniform(0, 5, (100,))
 y = np.random.uniform(0, 5, (100,))
@@ -29,6 +30,7 @@ mat_label = Mat([label]).T()
 weight = Mat.zeros(3, 1)
 lam = 0.01
 
+now = datetime.now()
 for epoch in range(max_iteration):
     weight.zero_grad()
     loss = - mat_label.T() * op.log(1 / (1 + op.exp(-mat_X * weight))) - (1 - mat_label).T() * op.log(1 - 1 / (1 + op.exp(-mat_X * weight))) + lam * weight.T() * weight
@@ -37,6 +39,9 @@ for epoch in range(max_iteration):
 
     if epoch % 10 == 0:
         print(f"epoch:{epoch},loss:{loss}")
+end = datetime.now()
+
+print((end-now))
 
 x = np.linspace(0, 5, 50)
 y = list(map(lambda x: (-weight[0][0].value - weight[1][0].value * x) / weight[2][0].value, x))
