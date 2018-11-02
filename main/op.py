@@ -1,4 +1,4 @@
-from data_structure import Mat, Node
+from DataStructure import Mat, Node
 import math
 
 
