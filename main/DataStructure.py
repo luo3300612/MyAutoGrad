@@ -36,16 +36,16 @@ class Node:
         """partial self partial target"""
         if self is target:
             gradient =  1
-        elif len(self.fathers) is 0:
+        elif len(self.fathers) is 0: # root node
             gradient =  0
-        elif len(self.fathers) == 1:
+        elif len(self.fathers) == 1: # func node
             gradient = 0
             if self.oper == "log":
                 gradient = 1 / self.fathers[0].value
             elif self.oper == "exp":
                 gradient = self.value
             gradient = gradient * self.fathers[0].grad(target)
-        elif len(self.fathers) == 2:
+        elif len(self.fathers) == 2: # ret node
             gradient_left = 0
             gradient_right = 0
 
