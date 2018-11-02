@@ -35,17 +35,17 @@ class Node:
     def grad(self, target):
         """partial self partial target"""
         if self is target:
-            gradient =  1
-        elif len(self.fathers) is 0: # root node
-            gradient =  0
-        elif len(self.fathers) == 1: # func node
+            gradient = 1
+        elif len(self.fathers) is 0:  # root node
+            gradient = 0
+        elif len(self.fathers) == 1:  # func node
             gradient = 0
             if self.oper == "log":
                 gradient = 1 / self.fathers[0].value
             elif self.oper == "exp":
                 gradient = self.value
             gradient = gradient * self.fathers[0].grad(target)
-        elif len(self.fathers) == 2: # ret node
+        elif len(self.fathers) == 2:  # ret node
             gradient_left = 0
             gradient_right = 0
 
@@ -63,7 +63,7 @@ class Node:
                 gradient_right = -self.fathers[0].value / self.fathers[1].value ** 2
 
             gradient = gradient_left * self.fathers[0].grad(target) + \
-                   gradient_right * self.fathers[1].grad(target)
+                       gradient_right * self.fathers[1].grad(target)
         else:
             raise NotImplementedError
         return gradient
@@ -80,8 +80,8 @@ class Node:
             ret = f"{self.value}"
         return ret
 
+
 class Mat:
-    # TODO Return one place
 
     def __init__(self, elements=None):
         self.m = 0
@@ -135,7 +135,7 @@ class Mat:
 
     def __add__(self, other):
         if isinstance(other, numbers.Real):
-            return self.scalar_oper_exchangeable(other, '+')
+            return self.scalar_oper(other, '+', False)
         else:
             return self.cal_base(other, '+')
 
@@ -144,23 +144,23 @@ class Mat:
 
     def __sub__(self, other):
         if isinstance(other, numbers.Real):
-            return self.scalar_oper_exchangeable(other, '-')
+            return self.scalar_oper(other, '-', True)
         else:
             return self.cal_base(other, '-')
 
     def __rsub__(self, other):
         if isinstance(other, numbers.Real):
-            return self.scalar_oper_right(other, '-')
+            return self.scalar_oper(other, '-', True)
 
     def __truediv__(self, other):
         if isinstance(other, numbers.Real):
-            return self.scalar_oper_exchangeable(other, '/')
+            return self.scalar_oper(other, '/', False)
         else:
             raise AttributeError
 
     def __rtruediv__(self, other):
         if isinstance(other, numbers.Real):
-            return self.scalar_oper_right(other, '/')
+            return self.scalar_oper(other, '/', True)
 
     def __mul__(self, other):
         if isinstance(other, Mat):
@@ -191,7 +191,7 @@ class Mat:
                 ret.mat.append(row)
             return ret
         elif isinstance(other, numbers.Real):
-            return self.scalar_oper_exchangeable(other, '*')
+            return self.scalar_oper(other, '*', False)
 
     def __rmul__(self, other):
         return self * other
@@ -199,7 +199,7 @@ class Mat:
     def __neg__(self):
         return 0 - self
 
-    def scalar_oper_exchangeable(self, other, oper):
+    def scalar_oper(self, other, oper, reverse):
         """
         I treat scalar oper by simply create Node for each element of
         Mat and do operation.
@@ -219,27 +219,16 @@ class Mat:
         for i in range(self.m):
             row = []
             for j in range(self.n):
-                new_node = eval("self.mat[i][j]" +
-                                oper +
-                                "Node(other)"
-                                )
-                row.append(new_node)
-            ret.mat.append(row)
-        return ret
-
-    def scalar_oper_right(self, other, oper):
-        ret = Mat.gen_ret(m=self.m,
-                          n=self.n,
-                          fathers=[other, self],
-                          oper=oper
-                          )
-        for i in range(self.m):
-            row = []
-            for j in range(self.n):
-                new_node = eval("Node(other)" +
-                                oper +
-                                "self.mat[i][j]"
-                                )
+                if not reverse:
+                    new_node = eval("self.mat[i][j]" +
+                                    oper +
+                                    "Node(other)"
+                                    )
+                else:
+                    new_node = eval("Node(other)" +
+                                    oper +
+                                    "self.mat[i][j]"
+                                    )
                 row.append(new_node)
             ret.mat.append(row)
         return ret
@@ -252,8 +241,8 @@ class Mat:
         """
         grad inplement gradient of a Mat to a Mat (self.n == 1),
         we use Denominator layout which means parital Ax partial x is A.T()
-        :param target:
-        :return: partial self partial target
+        Though grad return a Mat, high-order gradient is not implemented as
+        grad return a Mat with Nodes without fathers
         """
         if len(self.fathers) == 2:
             if target.n == 1:
