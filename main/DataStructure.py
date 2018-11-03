@@ -240,11 +240,11 @@ class Mat:
     def grad(self, target):
         """
         grad inplement gradient of a Mat to a Mat (self.n == 1),
-        we use Denominator layout which means parital Ax partial x is A.T()
+        I use Denominator layout which means parital Ax partial x is A.T()
         Though grad return a Mat, high-order gradient is not implemented as
         grad return a Mat with Nodes without fathers
         """
-        if len(self.fathers) == 2:
+        if len(self.fathers) == 2:  # for Mat calculated by Binocular operation
             if target.n == 1:
                 ret = Mat.gen_ret(m=target.m,
                                   n=self.m,
@@ -253,12 +253,25 @@ class Mat:
                 for i in range(ret.m):
                     row = []
                     for j in range(ret.n):
-                        new_node = Node(self.mat[j][0].grad(target.mat[i][0]), show=False)
+                        new_node = Node(self[j][0].grad(target[i][0]), show=False)
                         row.append(new_node)
                     ret.mat.append(row)
-                return ret
             else:
                 raise NotImplementedError
+        elif self.m == 1 and self.n == 1:  # grad scalar gard Mat
+            ret = Mat.gen_ret(m=target.m,
+                              n=target.n,
+                              )
+            for i in range(ret.m):
+                row = []
+                for j in range(ret.n):
+                    new_node = Node(self[0][0].grad(target[i][j]))
+                    row.append(new_node)
+                ret.mat.append(row)
+        else:
+            raise NotImplementedError
+
+        return ret
 
     @staticmethod
     def ones(m, n):
@@ -339,7 +352,7 @@ class Mat:
 
 if __name__ == "__main__":
     # test for long term gradient
-    # A = Node(2)
+    A = Node(2)
     # B = Node(3)
     # C = A * B
     # D = Node(4)
@@ -433,15 +446,18 @@ if __name__ == "__main__":
     # print(matA[1:3])
 
     # test for scalar + - * /
-    matA = Mat([[1, 2, 3], [2, 3, 3]])
-    print(matA + 2)
-    print(2 + matA)
+    # matA = Mat([[1, 2, 3], [2, 3, 3]])
+    # print(matA + 2)
+    # print(2 + matA)
+    # #
+    # print(matA - 2)
+    # print(2 - matA)
     #
-    print(matA - 2)
-    print(2 - matA)
+    # print(matA * 2)
+    # print(2 * matA)
+    #
+    # print(matA / 2)
+    # print(2 / matA)
 
-    print(matA * 2)
-    print(2 * matA)
+    # test for scalar grad Mat
 
-    print(matA / 2)
-    print(2 / matA)
