@@ -38,14 +38,16 @@ class op:
             return ret
 
     @staticmethod
-    def norm_suqare(x):
+    def norm_square(x):
         if isinstance(x, Node):
             ret = x * x
         elif isinstance(x, Mat):
-            ret = Node(0)
+            ret = Mat.gen_ret(m=1,n=1)
+            node = Node(0)
             for i in range(x.m):
                 for j in range(x.n):
-                    ret = ret + x[i][j] * x[i][j]
+                    node = node + x[i][j] * x[i][j]
+            ret.mat = [[node]]
         else:
             raise NotImplementedError
         return ret
