@@ -1,7 +1,7 @@
-from DataStructure import Mat, Node
+from autograd.autograd.DataStructure import Mat
+from autograd.autograd.op import op
 import numpy as np
 import matplotlib.pyplot as plt
-from op import op
 from datetime import datetime
 
 x = np.random.uniform(0, 5, (100,))

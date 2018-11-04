@@ -1,5 +1,5 @@
-from DataStructure import Node, Mat
-from op import op
+from autograd.autograd.DataStructure import Node, Mat
+from autograd.autograd.op import op
 
 if __name__ == "__main__":
     # test for scalar grad Mat

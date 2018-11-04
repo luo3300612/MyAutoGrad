@@ -1,4 +1,4 @@
-from DataStructure import Mat, Node
+from autograd.autograd.DataStructure import Mat, Node
 import math
 
 

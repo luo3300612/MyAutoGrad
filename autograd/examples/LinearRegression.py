@@ -1,4 +1,5 @@
-from DataStructure import Mat
+from autograd.autograd.DataStructure import Mat
+from autograd.autograd.op import op
 import matplotlib.pyplot as plt
 import numpy as np
 
