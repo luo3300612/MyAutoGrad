@@ -460,4 +460,3 @@ if __name__ == "__main__":
     # print(2 / matA)
 
     # test for scalar grad Mat
-

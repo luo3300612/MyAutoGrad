@@ -38,7 +38,7 @@ class op:
             return ret
 
     @staticmethod
-    def norm_square(x):
+    def norm_square(x) -> Mat:
         if isinstance(x, Node):
             ret = x * x
         elif isinstance(x, Mat):
