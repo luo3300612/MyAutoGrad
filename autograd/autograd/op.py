@@ -42,7 +42,7 @@ class op:
         if isinstance(x, Node):
             ret = x * x
         elif isinstance(x, Mat):
-            ret = Mat.gen_ret(m=1,n=1)
+            ret = Mat.gen_ret(m=1, n=1)
             node = Node(0)
             for i in range(x.m):
                 for j in range(x.n):
@@ -51,24 +51,3 @@ class op:
         else:
             raise NotImplementedError
         return ret
-
-
-if __name__ == "__main__":
-    node1 = Node(3)
-    # node2 = Node(4)
-    # node3 = node1 * node2
-    # node4 = op.log(node3)
-    # node5 = op.exp(node4)
-    # print(node5.grad(node2))
-    #
-    # test for Mat log exp
-    # mat1 = Mat([[1, 2], [2, 3], [2, math.e]])
-    # print(format(op.log(mat1), '.3f'))
-    # print()
-    # print(format(op.exp(mat1), '.2f'))
-    #
-    # test for norm_square
-    # mat1 = Mat([[1, 2], [2, 3], [2, math.e]])
-    # print(mat1)
-    # print(op.norm_suqare(mat1))
-    # print(op.norm_suqare(mat1).grad(mat1[0][0]))

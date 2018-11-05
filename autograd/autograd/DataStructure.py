@@ -22,6 +22,9 @@ class Node:
     def __truediv__(self, other):
         return self.oper_base(other, '/')
 
+    def __eq__(self, other):
+        return self.value == other.value
+
     def oper_base(self, other, oper):
         """base of elementary calculation"""
         ret = Node()
@@ -144,7 +147,7 @@ class Mat:
 
     def __sub__(self, other):
         if isinstance(other, numbers.Real):
-            return self.scalar_oper(other, '-', True)
+            return self.scalar_oper(other, '-', False)
         else:
             return self.cal_base(other, '-')
 
@@ -232,6 +235,16 @@ class Mat:
                 row.append(new_node)
             ret.mat.append(row)
         return ret
+
+    def __eq__(self, other):
+        if self.m != other.m or self.n != other.n:
+            return False
+        else:
+            for i in range(self.m):
+                for j in range(self.n):
+                    if self[i][j] != other[i][j]:
+                        return False
+            return True
 
     def __getitem__(self, item):
         return self.mat[item]
@@ -348,115 +361,3 @@ class Mat:
         to_show = [repr(item) for item in self.mat]
         to_show = '\n'.join(to_show)
         return to_show
-
-
-if __name__ == "__main__":
-    # test for long term gradient
-    A = Node(2)
-    # B = Node(3)
-    # C = A * B
-    # D = Node(4)
-    # E = C * D
-    # F = B + E
-    # G = F - D
-    #
-    # print(G)
-    # print(G.grad(A))
-    # print(G.grad(B))
-    # print(G.grad(C))
-    # print(G.grad(D))
-    # print(G.grad(E))
-    # print(G.grad(F))
-
-    # test for identical fathers
-    # A = Node(2)
-    # B = A * A
-    # C = A * B
-    # print(B.grad(A))
-
-    # test for matrix plus
-    # mat1 = Mat([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-    # mat2 = Mat([[3, 1, 9], [4, 5, 6], [7, 8, 9]])
-    # print(mat1 + mat2)
-
-    # test for in-position
-    # A = Node(2)
-    # B = Node(3)
-    # C = Node(4)
-    #
-    # A = A * B
-    # A = A * C
-    # print(A.grad(B))
-    # print(A.grad(C))
-
-    # test for matrix mul
-    # mat1 = Mat([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-    # mat2 = Mat([[3, 1, 1], [1, 4, 5], [1, 7, 8]])
-    # mat3 = mat1 * mat2
-    # mat4 = mat1 + mat2
-    # mat5 = mat1 - mat2
-    # print(mat1)
-    # print(mat2)
-    # print(mat3)
-    # print(mat4)
-    # print(mat5)
-
-    # test for ones and zeros and eye
-    # mat1 = Mat.ones(5,6)
-    # mat2 = Mat.zeros(9,9)
-    # mat3 = Mat.eye(6,4)
-    # print(mat1)
-    # print(mat2)
-    # print(mat3)
-
-    # test for mat grad
-    # mat1 = Mat([[2, 3, 4], [5, 6, 8]])
-    # mat2 = Mat([[2], [3], [4]])
-    # mat3 = mat1 * mat2
-    # print("mat1")
-    # print(mat1)
-    # print("mat2")
-    # print(mat2)
-    # print("mat3")
-    # print(mat3)
-    # print("partial mat3 partial mat2")
-    # print(mat3.grad(mat2))
-
-    # test for .T
-    # matA = Mat([[1, 2, 3], [1, 1, 1]])
-    # print(matA)
-    # print(matA.T())
-    # print(matA)
-
-    # test for quadratic form
-    # matA = Mat([[1, 2, 3], [2, 1, 1], [3, 1, 1]])
-    # matx = Mat([[1], [2], [3]])
-    # matC = matx.T() * matA * matx
-    # print("matC\n",matC)
-    # print("C.grad(x)\n",matC.grad(matx))
-    # print("matA * matx\n",matA*matx)
-    # print("matA.T * matx\n",matA.T()*matx)
-
-    # test for log and exp
-    # node1 = Node(5)
-    # node2 = node1.log()
-
-    # test for Mat getitem
-    # matA = Mat([[1, 2, 3], [2, 1, 1], [3, 1, 1]])
-    # print(matA[1:3])
-
-    # test for scalar + - * /
-    # matA = Mat([[1, 2, 3], [2, 3, 3]])
-    # print(matA + 2)
-    # print(2 + matA)
-    # #
-    # print(matA - 2)
-    # print(2 - matA)
-    #
-    # print(matA * 2)
-    # print(2 * matA)
-    #
-    # print(matA / 2)
-    # print(2 / matA)
-
-    # test for scalar grad Mat

@@ -9,3 +9,16 @@ To ask for grad, just use A.grad(B) , which can give you partial A partial B
 ## example
 * [LinearRegression](https://github.com/luo3300612/MyDL/blob/master/autograd/examples/LinearRegression.py)
 * [LogisticRegression](https://github.com/luo3300612/MyDL/blob/master/autograd/examples/LogisticRegression.py)
+
+## Other usages 
+```angular2html
+>>> mat1 = Mat([[1, 2], [2, 3], [2, math.e]])
+>>> format(op.log(mat1), '.3f')
+['0.000', '0.693']
+['0.693', '1.099']
+['0.693', '1.000']
+
+```
+
+## TODO
+* .T() -> .T
