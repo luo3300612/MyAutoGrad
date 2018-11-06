@@ -6,7 +6,6 @@ class Node:
     def __init__(self, num=None, show=False):
         self.value = num
         self.fathers = []
-        self.children = []
         self.oper = None
         self.show = show
 
@@ -31,8 +30,6 @@ class Node:
         ret.value = eval("self.value" + oper + "other.value")
         ret.oper = oper
         ret.fathers = [self, other]
-        self.children.append(ret)
-        other.children.append(other)
         return ret
 
     def grad(self, target):
@@ -90,7 +87,6 @@ class Mat:
         self.m = 0
         self.n = 0
         self.fathers = []
-        self.children = []
         self.oper = None
         if elements is not None:
             self.m = len(elements)
@@ -111,10 +107,6 @@ class Mat:
         ret.n = n
         ret.mat = [] if mat is None else mat
         ret.fathers = [] if fathers is None else fathers
-        if fathers is not None:
-            for father in fathers:
-                if isinstance(father, cls):
-                    father.children.append(ret)
         ret.oper = None if oper is None else oper
         return ret
 
@@ -342,9 +334,13 @@ class Mat:
         return ret
 
     def zero_grad(self):
-        for i in range(self.m):
-            for j in range(self.n):
-                self.mat[i][j].fathers = []
+        if len(self.fathers) == 0:
+            for i in range(self.m):
+                for j in range(self.n):
+                    self.mat[i][j].fathers = []
+        else:
+            for father in filter(lambda n:isinstance(n,Mat), self.fathers):
+                father.zero_grad()
 
     @property
     def values(self):

@@ -51,7 +51,6 @@ for epoch in range(max_iteration):
         # back propagation
         for i in range(4):
             parameters[i] = parameters[i] - alpha * loss.grad(parameters[i])
-            parameters[i].zero_grad() # TODO
 
         loss.zero_grad()
         if o.values[0][0] > 0.5 and label.values[i][0] == 1: # TODO make it easier to use

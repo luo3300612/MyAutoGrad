@@ -28,6 +28,9 @@ To ask for grad, just use A.grad(B) , which can give you partial A partial B
 * .T() -> .T
 * add MatMulInternalError
 * add NN for exclusive-or problem
+### Nov 7
+* remove children of Mat and Node
+* optimize zero_grad to simplify computation graph
 ## TODO
 * impelemnt Node scalar operation instead of Mat 
 * add flag require grad to simplify computation graph 

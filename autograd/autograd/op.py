@@ -18,7 +18,6 @@ class op:
             ret.value = eval("math." + fun + "(x.value)")
             ret.oper = fun
             ret.fathers = [x]
-            x.children.append(ret)
             return ret
         elif isinstance(x, Mat):
             ret = Mat()
@@ -27,7 +26,6 @@ class op:
             ret.mat = []
             ret.fathers = [x]
             ret.oper = fun
-            x.children.append(ret)
             for i in range(x.m):
                 row = []
                 for j in range(x.n):
