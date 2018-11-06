@@ -25,17 +25,18 @@ max_iteration = 100
 
 X = np.vstack((np.ones(100, ), x))
 X = np.vstack((X, y))
-mat_X = Mat(X).T()
-mat_label = Mat([label]).T()
+mat_X = Mat(X).T
+mat_label = Mat([label]).T
 weight = Mat.zeros(3, 1)
-lam = 0.01
+lam = 0.001
 
 now = datetime.now()
 for epoch in range(max_iteration):
-    weight.zero_grad()
-    loss = - mat_label.T() * op.log(1 / (1 + op.exp(-mat_X * weight))) - (1 - mat_label).T() * op.log(1 - 1 / (1 + op.exp(-mat_X * weight))) + lam * weight.T() * weight
+    loss = - mat_label.T * op.log(1 / (1 + op.exp(-mat_X * weight))) - (1 - mat_label).T * op.log(1 - 1 / (1 + op.exp(-mat_X * weight))) + lam * weight.T * weight
 
     weight = weight - alpha * loss.grad(weight)
+    weight.zero_grad() # TODO do this in class ,will improve 3x efficiency
+    loss.zero_grad()
 
     if epoch % 10 == 0:
         print(f"epoch:{epoch},loss:{loss}")
