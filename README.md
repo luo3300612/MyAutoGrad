@@ -2,14 +2,14 @@
 
 To ask for grad, just use A.grad(B) , which can give you partial A partial B
 
-**Efficiency is the last thing I will consider.**
+**Philosophy**:Efficiency is the last thing I will consider.
 ## core
-[core](https://github.com/luo3300612/MyDL/blob/master/autograd/autograd/DataStructure.py)
+[core](https://github.com/luo3300612/MyDL/blob/master/autograd/DataStructure.py)
 
 ## example
-* [LinearRegression](https://github.com/luo3300612/MyDL/blob/master/autograd/examples/LinearRegression.py)
-* [LogisticRegression](https://github.com/luo3300612/MyDL/blob/master/autograd/examples/LogisticRegression.py)
-* [Neural Network](https://github.com/luo3300612/MyAutoGrad/blob/master/autograd/examples/NN.py)
+* [LinearRegression](https://github.com/luo3300612/MyDL/blob/master/examples/LinearRegression.py)
+* [LogisticRegression](https://github.com/luo3300612/MyDL/blob/master/examples/LogisticRegression.py)
+* [Neural Network](https://github.com/luo3300612/MyAutoGrad/blob/master/examples/NN.py)
 ## Other usages 
 ```angular2html
 >>> mat1 = Mat([[1, 2], [2, 3], [2, math.e]])
@@ -33,7 +33,11 @@ To ask for grad, just use A.grad(B) , which can give you partial A partial B
 * optimize zero_grad to simplify computation graph
 * add node scalar operation, make Mat scalar operation depend on it 
 * overload > < of Node
+### ISSUE
+Since Node and Mat both implement \_\_roper\_\_ method, we will face error when we do Mat + Node or Node + Mat 
 ## TODO
+* combine Node.zero_grad and Mat.zero_grad
+* fix some awful feature 
 * add flag require_grad to simplify computation graph 
 * fix format
 * random
