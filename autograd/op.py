@@ -1,6 +1,5 @@
-from autograd.autograd.DataStructure import Mat, Node
+from autograd.DataStructure import Mat, Node
 import math
-
 
 class op:
     @staticmethod

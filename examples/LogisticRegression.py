@@ -1,5 +1,5 @@
-from autograd.autograd.DataStructure import Mat
-from autograd.autograd.op import op
+from autograd.DataStructure import Mat
+from autograd.op import op
 import numpy as np
 import matplotlib.pyplot as plt
 from datetime import datetime

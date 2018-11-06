@@ -1,5 +1,5 @@
-from autograd.autograd.DataStructure import Mat
-from autograd.autograd.op import op
+from autograd.DataStructure import Mat
+from autograd.op import op
 import numpy as np
 
 train = Mat([[0, 0], [1, 0], [0, 1], [1, 1]])
