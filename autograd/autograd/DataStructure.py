@@ -119,8 +119,12 @@ class Mat:
         return ret
 
     def cal_base(self, other, oper):
-        assert self.m == other.m and self.n == other.n
-
+        try:
+            assert self.m == other.m and self.n == other.n
+        except AssertionError as e:
+            print(e)
+            print(f"Dim not match {self.m},{self.n} {oper} {other.m}{other.n}")
+            raise
         ret = Mat.gen_ret(m=self.m,
                           n=self.n,
                           fathers=[self, other],
@@ -186,10 +190,9 @@ class Mat:
                     for k in range(self.n):
                         try:
                             new_node = new_node + self.mat[i][k] * other.mat[k][j]
-                        except:
-                            print(type(self.mat[i][k]))
-                            print(type(other.mat[k][j]))
-                            raise AttributeError
+                        except Exception as e:
+                            print(e)
+                            raise MatMulInternalError(self, other)
                     row.append(new_node)
                 ret.mat.append(row)
             return ret
@@ -318,6 +321,8 @@ class Mat:
         return ret
 
     # TODO optimization
+
+    @property
     def T(self):
         Nodes = []
         for j in range(self.n):
@@ -341,6 +346,7 @@ class Mat:
             for j in range(self.n):
                 self.mat[i][j].fathers = []
 
+    @property
     def values(self):
         ret = []
         for i in range(self.m):
@@ -361,3 +367,10 @@ class Mat:
         to_show = [repr(item) for item in self.mat]
         to_show = '\n'.join(to_show)
         return to_show
+
+
+class MatMulInternalError(Exception):
+
+    def __init__(self, mat1, mat2):
+        err = f"MatMulInternalError\n,mat1:\n{mat1}\n,mat2:\n{mat2}\n"
+        Exception.__init__(self, err)
