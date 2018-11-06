@@ -55,6 +55,27 @@ class TestNodeMethods(unittest.TestCase):
         node5 = op.exp(node4)
         self.assertEqual(node5.grad(node1), 4)
 
+    def test_node_scalar_oper(self):
+        node1 = Node(5)
+        node2 = Node(2)
+        self.assertEqual(node1 + 5, Node(10))
+        self.assertEqual(5 + node1, Node(10))
+        self.assertEqual(node1 - 2, Node(3))
+        self.assertEqual(2 - node1, Node(-3))
+        self.assertEqual(2 * node1, Node(10))
+        self.assertEqual(node1 * 2, Node(10))
+        self.assertEqual(node2 / 2, Node(1))
+        self.assertEqual(4 / node2, Node(2))
+
+    def test_lt_gt(self):
+        node1 = Node(5)
+        node2 = Node(7)
+        self.assertTrue(node1 < node2)
+        self.assertFalse(node1 > node2)
+        self.assertTrue(node1 < 6)
+        self.assertFalse(node1 > 10)
+
+
 class TestMatMethods(unittest.TestCase):
 
     def test_mat_plus(self):

@@ -43,19 +43,19 @@ for epoch in range(max_iteration):
         # forward
         x = Mat([train.values[i]]).T
         o = forward(x, *parameters)
-        loss = op.norm_square(o - label.values[i][0])  # TODO make it correspondence
+        loss = op.norm_square(o - label[i][0])
 
         # record loss
-        loss_history[0][epoch] = loss_history[0][epoch] + loss[0][0]  # TODO make it easier to use
+        loss_history[0][epoch] = loss_history[0][epoch] + loss[0][0]
 
         # back propagation
         for i in range(4):
             parameters[i] = parameters[i] - alpha * loss.grad(parameters[i])
 
         loss.zero_grad()
-        if o.values[0][0] > 0.5 and label.values[i][0] == 1: # TODO make it easier to use
+        if o[0][0] > 0.5 and label[i][0] == 1: # TODO make it easier to use
             acc += 1
-        elif o.values[0][0] < 0.5 and label.values[i][0] == 0:
+        elif o[0][0] < 0.5 and label[i][0] == 0:
             acc += 1
 
     if epoch % 1 == 0:

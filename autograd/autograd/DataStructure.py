@@ -10,19 +10,54 @@ class Node:
         self.show = show
 
     def __add__(self, other):
+        if isinstance(other, numbers.Real):
+            return self.oper_base(Node(other), '+')
         return self.oper_base(other, '+')
 
+    def __radd__(self, other):
+        return self.__add__(other)
+
     def __sub__(self, other):
+        if isinstance(other, numbers.Real):
+            return self.oper_base(Node(other), '-')
         return self.oper_base(other, '-')
 
+    def __rsub__(self, other):
+        return Node(other).oper_base(self, '-')
+
     def __mul__(self, other):
+        if isinstance(other, numbers.Real):
+            return self.oper_base(Node(other), '*')
         return self.oper_base(other, '*')
 
+    def __rmul__(self, other):
+        return self.__mul__(other)
+
     def __truediv__(self, other):
+        if isinstance(other, numbers.Real):
+            return self.oper_base(Node(other), '/')
         return self.oper_base(other, '/')
 
+    def __rtruediv__(self, other):
+        return Node(other).oper_base(self, '/')
+
     def __eq__(self, other):
-        return self.value == other.value
+        if isinstance(other, Node):
+            return self.value == other.value
+        elif isinstance(other, numbers.Real):
+            return self.value == other
+
+    def __lt__(self, other):
+        if isinstance(other, Node):
+            return self.value < other.value
+        elif isinstance(other, numbers.Real):
+            return self.value < other
+
+    def __gt__(self, other):
+        if isinstance(other, Node):
+            return self.value > other.value
+        elif isinstance(other, numbers.Real):
+            return self.value > other
 
     def oper_base(self, other, oper):
         """base of elementary calculation"""
@@ -142,23 +177,23 @@ class Mat:
         return self + other
 
     def __sub__(self, other):
-        if isinstance(other, numbers.Real):
+        if isinstance(other, numbers.Real) or isinstance(other, Node):
             return self.scalar_oper(other, '-', False)
         else:
             return self.cal_base(other, '-')
 
     def __rsub__(self, other):
-        if isinstance(other, numbers.Real):
+        if isinstance(other, numbers.Real) or isinstance(other, Node):
             return self.scalar_oper(other, '-', True)
 
     def __truediv__(self, other):
-        if isinstance(other, numbers.Real):
+        if isinstance(other, numbers.Real) or isinstance(other, Node):
             return self.scalar_oper(other, '/', False)
         else:
-            raise AttributeError
+            raise NotImplementedError
 
     def __rtruediv__(self, other):
-        if isinstance(other, numbers.Real):
+        if isinstance(other, numbers.Real) or isinstance(other, Node):
             return self.scalar_oper(other, '/', True)
 
     def __mul__(self, other):
@@ -220,10 +255,10 @@ class Mat:
                 if not reverse:
                     new_node = eval("self.mat[i][j]" +
                                     oper +
-                                    "Node(other)"
+                                    "other"
                                     )
                 else:
-                    new_node = eval("Node(other)" +
+                    new_node = eval("other" +
                                     oper +
                                     "self.mat[i][j]"
                                     )
