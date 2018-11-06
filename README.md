@@ -9,7 +9,7 @@ To ask for grad, just use A.grad(B) , which can give you partial A partial B
 ## example
 * [LinearRegression](https://github.com/luo3300612/MyDL/blob/master/autograd/examples/LinearRegression.py)
 * [LogisticRegression](https://github.com/luo3300612/MyDL/blob/master/autograd/examples/LogisticRegression.py)
-
+* [Neural Network](https://github.com/luo3300612/MyAutoGrad/blob/master/autograd/examples/NN.py)
 ## Other usages 
 ```angular2html
 >>> mat1 = Mat([[1, 2], [2, 3], [2, math.e]])
@@ -34,8 +34,8 @@ To ask for grad, just use A.grad(B) , which can give you partial A partial B
 * add node scalar operation, make Mat scalar operation depend on it 
 * overload > < of Node
 ## TODO
-* impelemnt Node scalar operation instead of Mat 
-* add flag require grad to simplify computation graph 
-* overload > < 
+* add flag require_grad to simplify computation graph 
 * fix format
 * random
+## Thought
+* Node-based gradient -> Mat-based gradient

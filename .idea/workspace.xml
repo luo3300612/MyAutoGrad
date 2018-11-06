@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0fab713-e979-4d03-b0cf-853a8365c026" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autograd/autograd/DataStructure.py" beforeDir="false" afterPath="$PROJECT_DIR$/autograd/autograd/DataStructure.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autograd/examples/NN.py" beforeDir="false" afterPath="$PROJECT_DIR$/autograd/examples/NN.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_autograd.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_autograd.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,7 +14,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/X$op.coverage" NAME="op Coverage Results" MODIFIED="1540944558085" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
-    <SUITE FILE_PATH="coverage/myAutoGrad$Unittests_in_test_autograd_py.coverage" NAME="Unittests in test_autograd.py Coverage Results" MODIFIED="1541544148378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/myAutoGrad$Unittests_in_test_autograd_py.coverage" NAME="Unittests in test_autograd.py Coverage Results" MODIFIED="1541544906025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/X$LogisticRegression.coverage" NAME="LogisticRegression Coverage Results" MODIFIED="1541006031255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
     <SUITE FILE_PATH="coverage/X$demo.coverage" NAME="demo Coverage Results" MODIFIED="1541202230767" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
     <SUITE FILE_PATH="coverage/myAutoGrad$Unittests_for_test_autograd_TestMatMethods.coverage" NAME="Unittests for test_autograd.TestMatMethods Coverage Results" MODIFIED="1541464256913" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -84,14 +82,14 @@
           <entry key="LinearRegression (1)" value="16" />
           <entry key="LogisticRegression (1)" value="77" />
           <entry key="NN" value="185" />
-          <entry key="md" value="591" />
-          <entry key="py" value="3070" />
+          <entry key="md" value="678" />
+          <entry key="py" value="3356" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="591" />
-          <entry key="Python" value="3348" />
+          <entry key="Markdown" value="678" />
+          <entry key="Python" value="3634" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -108,12 +106,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="450">
-                <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+              <first_editor relative-caret-position="414">
+                <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
               </first_editor>
               <second_editor />
             </state>
@@ -123,28 +121,30 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/autograd/autograd/DataStructure.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="46" column="45" lean-forward="true" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+            <state relative-caret-position="225">
+              <caret line="402" column="38" lean-forward="true" selection-start-line="402" selection-start-column="38" selection-end-line="402" selection-end-column="38" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <marker date="1541544195169" expanded="true" signature="388:429" ph="..." />
-                <marker date="1541544195169" expanded="true" signature="624:678" ph="..." />
-                <marker date="1541544195169" expanded="true" signature="873:914" ph="..." />
-                <marker date="1541544195169" expanded="true" signature="1117:1171" ph="..." />
-                <marker date="1541544195169" expanded="true" signature="1749:1755" ph="..." />
-                <marker date="1541544195169" expanded="true" signature="13010:13016" ph="..." />
+                <marker date="1541544903165" expanded="true" signature="388:429" ph="..." />
+                <marker date="1541544903165" expanded="true" signature="624:678" ph="..." />
+                <marker date="1541544903165" expanded="true" signature="873:914" ph="..." />
+                <marker date="1541544903165" expanded="true" signature="1117:1171" ph="..." />
+                <marker date="1541544903165" expanded="true" signature="1749:1755" ph="..." />
+                <marker date="1541544903165" expanded="true" signature="12880:12886" ph="..." />
+                <marker date="1541544903165" expanded="true" signature="13063:13064" ph="..." />
+                <marker date="1541544903165" expanded="true" signature="13063:13065" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_autograd.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="229" lean-forward="true" selection-start-line="229" selection-end-line="229" />
+            <state relative-caret-position="431">
+              <caret line="241" lean-forward="true" selection-start-line="241" selection-end-line="241" />
               <folding>
-                <element signature="e#0#53#0" expanded="true" />
+                <element signature="e#0#70#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -153,7 +153,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/autograd/examples/LinearRegression.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
+            <state relative-caret-position="323">
               <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
@@ -165,7 +165,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/autograd/examples/LogisticRegression.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
+            <state relative-caret-position="-91">
               <caret line="22" column="12" lean-forward="true" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
@@ -177,8 +177,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/autograd/examples/NN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+            <state relative-caret-position="216">
+              <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
                 <marker date="1541543981422" expanded="true" signature="427:428" ph="..." />
@@ -222,8 +222,9 @@
       <find>value</find>
       <find>T</find>
       <find>zero_grad</find>
-      <find>chil</find>
       <find>zero_</find>
+      <find>chil</find>
+      <find>AssertionError</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -245,9 +246,9 @@
         <option value="$PROJECT_DIR$/autograd/autograd/op.py" />
         <option value="$PROJECT_DIR$/autograd/examples/LogisticRegression.py" />
         <option value="$PROJECT_DIR$/autograd/examples/NN.py" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/test_autograd.py" />
         <option value="$PROJECT_DIR$/autograd/autograd/DataStructure.py" />
-        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -322,7 +323,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.NN">
+  <component name="RunManager" selected="Python tests.Unittests in test_autograd.py">
     <configuration name="LinearRegression (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="myAutoGrad" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -441,8 +442,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.NN" />
         <item itemvalue="Python tests.Unittests in test_autograd.py" />
+        <item itemvalue="Python.NN" />
         <item itemvalue="Python.LogisticRegression (1)" />
         <item itemvalue="Python.LinearRegression (1)" />
         <item itemvalue="Python tests.Unittests for test_autograd.TestMatMethods" />
@@ -463,12 +464,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_test_autograd_py - 2018.11.06 at 07h 42m 27s.xml">
-      <configuration name="Unittests in test_autograd.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_autograd_py - 2018.11.06 at 08h 02m 56s.xml">
-      <configuration name="Unittests in test_autograd.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_for_test_autograd_TestMatMethods - 2018.11.06 at 08h 30m 57s.xml">
       <configuration name="Unittests for test_autograd.TestMatMethods" configurationId="tests" />
     </history-entry>
@@ -493,17 +488,23 @@
     <history-entry file="Unittests_in_test_autograd_py - 2018.11.07 at 06h 42m 28s.xml">
       <configuration name="Unittests in test_autograd.py" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_in_test_autograd_py - 2018.11.07 at 06h 54m 17s.xml">
+      <configuration name="Unittests in test_autograd.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_autograd_py - 2018.11.07 at 06h 55m 06s.xml">
+      <configuration name="Unittests in test_autograd.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="30" width="1865" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23140496" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23140496" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32969433" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32845894" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32845894" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.30258718" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -513,7 +514,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3352081" />
-      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.29246345" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.29246345" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -578,10 +579,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="414">
+            <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autograd/examples/LinearRegression.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autograd/examples/LogisticRegression.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-91">
+          <caret line="22" column="12" lean-forward="true" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/autograd/examples/NN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+        <state relative-caret-position="216">
+          <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
             <marker date="1541543981422" expanded="true" signature="427:428" ph="..." />
@@ -592,59 +623,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/autograd/examples/LogisticRegression.py">
+    <entry file="file://$PROJECT_DIR$/autograd/autograd/DataStructure.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="22" column="12" lean-forward="true" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+        <state relative-caret-position="225">
+          <caret line="402" column="38" lean-forward="true" selection-start-line="402" selection-start-column="38" selection-end-line="402" selection-end-column="38" />
           <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autograd/examples/LinearRegression.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1541544903165" expanded="true" signature="388:429" ph="..." />
+            <marker date="1541544903165" expanded="true" signature="624:678" ph="..." />
+            <marker date="1541544903165" expanded="true" signature="873:914" ph="..." />
+            <marker date="1541544903165" expanded="true" signature="1117:1171" ph="..." />
+            <marker date="1541544903165" expanded="true" signature="1749:1755" ph="..." />
+            <marker date="1541544903165" expanded="true" signature="12880:12886" ph="..." />
+            <marker date="1541544903165" expanded="true" signature="13063:13064" ph="..." />
+            <marker date="1541544903165" expanded="true" signature="13063:13065" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_autograd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="229" lean-forward="true" selection-start-line="229" selection-end-line="229" />
+        <state relative-caret-position="431">
+          <caret line="241" lean-forward="true" selection-start-line="241" selection-end-line="241" />
           <folding>
-            <element signature="e#0#53#0" expanded="true" />
+            <element signature="e#0#70#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autograd/autograd/DataStructure.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="46" column="45" lean-forward="true" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-            <marker date="1541544195169" expanded="true" signature="388:429" ph="..." />
-            <marker date="1541544195169" expanded="true" signature="624:678" ph="..." />
-            <marker date="1541544195169" expanded="true" signature="873:914" ph="..." />
-            <marker date="1541544195169" expanded="true" signature="1117:1171" ph="..." />
-            <marker date="1541544195169" expanded="true" signature="1749:1755" ph="..." />
-            <marker date="1541544195169" expanded="true" signature="13010:13016" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="450">
-            <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>

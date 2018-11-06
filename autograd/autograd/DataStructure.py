@@ -148,10 +148,8 @@ class Mat:
     def cal_base(self, other, oper):
         try:
             assert self.m == other.m and self.n == other.n
-        except AssertionError as e:
-            print(e)
-            print(f"Dim not match {self.m},{self.n} {oper} {other.m}{other.n}")
-            raise
+        except AssertionError:
+            raise DimNotMatchError(self, other, oper)
         ret = Mat.gen_ret(m=self.m,
                           n=self.n,
                           fathers=[self, other],
@@ -201,8 +199,7 @@ class Mat:
             try:
                 assert self.n == other.m
             except AssertionError:
-                print(f"Dim not match:{self.m}*{self.n} mul {other.m}*{other.n}")
-                raise AssertionError
+                raise DimNotMatchError(self, other, "*")
 
             ret = Mat.gen_ret(m=self.m,
                               n=other.n,
@@ -374,7 +371,7 @@ class Mat:
                 for j in range(self.n):
                     self.mat[i][j].fathers = []
         else:
-            for father in filter(lambda n:isinstance(n,Mat), self.fathers):
+            for father in filter(lambda n: isinstance(n, Mat), self.fathers):
                 father.zero_grad()
 
     @property
@@ -404,4 +401,11 @@ class MatMulInternalError(Exception):
 
     def __init__(self, mat1, mat2):
         err = f"MatMulInternalError\n,mat1:\n{mat1}\n,mat2:\n{mat2}\n"
+        Exception.__init__(self, err)
+
+
+class DimNotMatchError(Exception):
+
+    def __init__(self, mat1, mat2, oper):
+        err = f"DimNotMatchError:{mat1.m}*{mat1.n} {oper} {mat2.m}*{mat2.n}"
         Exception.__init__(self, err)

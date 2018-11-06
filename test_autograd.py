@@ -1,4 +1,4 @@
-from autograd.autograd.DataStructure import Node, Mat
+from autograd.autograd.DataStructure import Node, Mat, DimNotMatchError
 from autograd.autograd.op import op
 import unittest
 import math
@@ -226,6 +226,15 @@ class TestMatMethods(unittest.TestCase):
         mat1 = Mat([[1, 2], [2, 3], [2, math.e]])
         self.assertEqual(op.norm_square(mat1), Mat([[22 + math.e * math.e]]))
         self.assertEqual(op.norm_square(mat1).grad(mat1), 2 * mat1)
+
+    def test_dim_not_match_error(self):
+        mat1 = Mat([[1, 2], [2, 3], [2, math.e]])
+        mat2 = mat1.T
+        mat3 = Mat([[1]])
+        with self.assertRaises(DimNotMatchError):
+            mat4 = mat1 + mat2
+        with self.assertRaises(DimNotMatchError):
+            mat5 = mat2 * mat3
 
 
 if __name__ == "__main__":
