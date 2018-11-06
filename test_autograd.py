@@ -138,7 +138,7 @@ class TestMatMethods(unittest.TestCase):
         mat1 = Mat([[2, 3, 4], [5, 6, 8]])
         mat2 = Mat([[2], [3], [4]])
         mat3 = mat1 * mat2
-        self.assertEqual(mat3.grad(mat2), mat1.T())
+        self.assertEqual(mat3.grad(mat2), mat1.T)
 
     def test_mat_T(self):
         mat1 = Mat([[2, 3, 4],
@@ -148,15 +148,15 @@ class TestMatMethods(unittest.TestCase):
                     [3, 6],
                     [4, 8]])
 
-        self.assertEqual(mat1.T(), mat2)
+        self.assertEqual(mat1.T, mat2)
 
     def test_quadratic_from_grad(self):
         matA = Mat([[1, 2, 3], [2, 1, 1], [3, 1, 1]])
         matx = Mat([[1], [2], [3]])
-        matC = matx.T() * matA * matx
+        matC = matx.T * matA * matx
 
         self.assertEqual(matC.grad(matx),
-                         matA * matx + matA.T() * matx)
+                         matA * matx + matA.T * matx)
 
     def test_scalar_oper(self):
         matA = Mat([[1, 2, 3], [2, 3, 3]])
