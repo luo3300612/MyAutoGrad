@@ -20,5 +20,17 @@ To ask for grad, just use A.grad(B) , which can give you partial A partial B
 
 ```
 
-## TODO
+## Log 
+### Nov 5
+* refactor project structure
+* add unittest
+### Nov 6
 * .T() -> .T
+* add MatMulInternalError
+* add NN for exclusive-or problem
+## TODO
+* impelemnt Node scalar operation instead of Mat 
+* add flag require grad to simplify computation graph 
+* overload > < 
+* fix format
+* random
