@@ -7,9 +7,10 @@ To ask for grad, just use A.grad(B) , which can give you partial A partial B
 [core](https://github.com/luo3300612/MyDL/blob/master/autograd/DataStructure.py)
 
 ## example
-* [LinearRegression](https://github.com/luo3300612/MyDL/blob/master/examples/LinearRegression.py)
-* [LogisticRegression](https://github.com/luo3300612/MyDL/blob/master/examples/LogisticRegression.py)
+* [Linear Regression](https://github.com/luo3300612/MyDL/blob/master/examples/LinearRegression.py)
+* [Logistic Regression](https://github.com/luo3300612/MyDL/blob/master/examples/LogisticRegression.py)
 * [Neural Network](https://github.com/luo3300612/MyAutoGrad/blob/master/examples/NN.py)
+* [Softmax Regression](https://github.com/luo3300612/MyAutoGrad/blob/master/examples/Softmax.py)
 ## Other usages 
 ```angular2html
 >>> mat1 = Mat([[1, 2], [2, 3], [2, math.e]])
