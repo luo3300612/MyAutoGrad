@@ -236,6 +236,12 @@ class TestMatMethods(unittest.TestCase):
         with self.assertRaises(DimNotMatchError):
             mat5 = mat2 * mat3
 
+    def test_argmax_argmin(self):
+        mat1 = Mat([[1, 2, 3, 4, 5, 6, 9, 7]])
+        mat2 = Mat([[1, 3, 5, 3, 3, 422, 32, 4, ]]).T
+        self.assertEqual(op.argmax(mat1), 6)
+        self.assertEqual(op.argmax(mat2), 5)
+
 
 if __name__ == "__main__":
     unittest.main()
