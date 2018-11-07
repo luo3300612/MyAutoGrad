@@ -1,5 +1,7 @@
 from autograd.DataStructure import Mat, Node
 import math
+import numpy as np
+
 
 class op:
     @staticmethod
@@ -48,3 +50,13 @@ class op:
         else:
             raise NotImplementedError
         return ret
+
+    @staticmethod
+    def argmax(x: Mat):
+        assert x.m == 1 or x.n == 1
+        return np.argmax(np.array(x.values).reshape((-1, 1)))
+
+    @staticmethod
+    def argmin(x: Mat):
+        assert x.m == 1 or x.n == 1
+        return np.argmin(np.array(x.values).reshape((-1, 1)))
