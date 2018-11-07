@@ -104,11 +104,10 @@ class Node:
         return gradient
 
     def zero_grad(self):
-        if len(self.fathers) == 0:
-            self.fathers = []
-        else:
+        if len(self.fathers) != 0:
             for father in self.fathers:
                 father.zero_grad()
+        self.fathers = []
 
     def __repr__(self):
         if self.show:
@@ -374,7 +373,7 @@ class Mat:
         if len(self.fathers) == 0:
             for i in range(self.m):
                 for j in range(self.n):
-                    self.mat[i][j].fathers = []
+                    self.mat[i][j].zero_grad()
         else:
             for father in filter(lambda n: isinstance(n, Mat), self.fathers):
                 father.zero_grad()
