@@ -103,6 +103,13 @@ class Node:
             raise NotImplementedError
         return gradient
 
+    def zero_grad(self):
+        if len(self.fathers) == 0:
+            self.fathers = []
+        else:
+            for father in self.fathers:
+                father.zero_grad()
+
     def __repr__(self):
         if self.show:
             if len(self.fathers) == 2:
@@ -233,8 +240,6 @@ class Mat:
         """
         I treat scalar oper by simply create Node for each element of
         Mat and do operation.
-        I do not record result as chirldren of this scalar because I
-        don't create any Mat for the scalar.
 
         Another possible implementation:
         transfer scalar operation to Mat operation by create a scalar
