@@ -37,6 +37,7 @@ alpha = 0.01
 max_iteration = 100
 loss_history = np.zeros((max_iteration,))
 for epoch in range(max_iteration):
+    acc = 0
     for i in range(X.m):
         x = Mat([X.values[i]]).T # TODO  awful feature
         y = W * x
@@ -47,4 +48,8 @@ for epoch in range(max_iteration):
         loss_history[epoch] += loss.value
         W = W - alpha * LOSS.grad(W)
         LOSS.zero_grad()
-    print(f"epoch:{epoch},loss:{loss_history[epoch]}")
+
+        acc += (op.argmax(y) == labels[i])
+
+    if epoch % 20 == 0:
+        print(f"epoch:{epoch},loss:{loss_history[epoch]},acc:{acc}%")
