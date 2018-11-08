@@ -34,9 +34,12 @@ To ask for grad, just use A.grad(B) , which can give you partial A partial B
 * optimize zero_grad to simplify computation graph
 * add node scalar operation, make Mat scalar operation depend on it 
 * overload > < of Node
+* add softmax
+* fix zero_grad error
 ### ISSUE
 Since Node and Mat both implement \_\_roper\_\_ method, we will face error when we do Mat + Node or Node + Mat 
 ## TODO
+* singledispatch
 * combine Node.zero_grad and Mat.zero_grad
 * fix some awful feature 
 * add flag require_grad to simplify computation graph 
