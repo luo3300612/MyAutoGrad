@@ -47,3 +47,8 @@ Since Node and Mat both implement \_\_roper\_\_ method, we will face error when 
 * random
 ## Thought
 * Node-based gradient -> Mat-based gradient
+
+## Mat-Based implement
+* use numpy avoid overloading
+* use require_grad
+* calculate gradient in forward step for require_grad = 1
