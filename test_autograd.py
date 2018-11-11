@@ -1,5 +1,5 @@
-from autograd.DataStructure import Node, Mat, DimNotMatchError
-from autograd.op import op
+from myautograd.DataStructure import Node, Mat, DimNotMatchError
+from myautograd.op import op
 import unittest
 import math
 
