@@ -1,7 +1,10 @@
 # Note
-https://github.com/HIPS/autograd/blob/master/docs/tutorial.md
-https://docs.scipy.org/doc/numpy-1.15.1/user/c-info.how-to-extend.html
-
+## 网页
+* [autograd tutorial](https://github.com/HIPS/autograd/blob/master/docs/tutorial.md)
+* [numpy extend](https://docs.scipy.org/doc/numpy-1.15.1/user/c-info.how-to-extend.html)
+* [chainner](https://github.com/chainer/chainer)
+* [Pytorch](https://openreview.net/pdf?id=BJJsrmfCZ
+)
 ## 结构
 ### util.py
 * subvals(x:tuple, ivs:list[(i,v)]) -> let x[i] = v 
@@ -25,6 +28,7 @@ let g.__doc__ = f.__doc__
 
 ### tracer.py
 **Node类**
+* trace
 
 Node类是一个抽象类，其中有三个方法
 * __init__ 初始化方法
