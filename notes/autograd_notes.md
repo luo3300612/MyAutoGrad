@@ -5,6 +5,8 @@
 * [chainner](https://github.com/chainer/chainer)
 * [Pytorch](https://openreview.net/pdf?id=BJJsrmfCZ
 )
+* [AD blog](https://blog.csdn.net/daniel_ustc/article/details/77133329)
+* [eager execution](https://www.jianshu.com/p/9a212532e319)
 ## 结构
 ### util.py
 * subvals(x:tuple, ivs:list[(i,v)]) -> let x[i] = v 
@@ -77,3 +79,9 @@ class Node(object):
         root.initialize_root(*args, **kwargs)
         return root
 ```
+
+## 启发
+* 仅支持常值函数的微分
+
+## 名词
+* reverse-mode automatic differentiation

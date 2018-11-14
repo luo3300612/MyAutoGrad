@@ -70,18 +70,18 @@
     <session id="214026511">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="15" />
+          <entry key="project.closed" value="17" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.10" value="1" />
-          <entry key="project.open.time.11" value="5" />
+          <entry key="project.open.time.11" value="6" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="1" />
-          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.opened" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -91,7 +91,7 @@
           <entry key="NN" value="185" />
           <entry key="Python Console" value="175" />
           <entry key="Softmax" value="7" />
-          <entry key="md" value="2472" />
+          <entry key="md" value="2600" />
           <entry key="py" value="6704" />
           <entry key="test" value="441" />
         </counts>
@@ -99,7 +99,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="8" />
-          <entry key="Markdown" value="2464" />
+          <entry key="Markdown" value="2592" />
           <entry key="Python" value="7605" />
         </counts>
       </usages-collector>
@@ -231,8 +231,8 @@
             <entry file="file://$PROJECT_DIR$/notes/autograd_notes.md">
               <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
                 <state split_layout="SPLIT">
-                  <first_editor relative-caret-position="180">
-                    <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+                  <first_editor relative-caret-position="144">
+                    <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
                   </first_editor>
                   <second_editor />
                 </state>
@@ -307,7 +307,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="987" />
     <option name="y" value="30" />
     <option name="width" value="923" />
@@ -319,6 +319,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -344,7 +345,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -560,10 +560,10 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="55" y="30" width="1865" height="1050" extended-state="7" />
+    <frame x="55" y="30" width="1865" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14214876" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14545454" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -577,7 +577,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.34533185" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.34758157" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.28233972" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -811,8 +811,8 @@
     <entry file="file://$PROJECT_DIR$/notes/autograd_notes.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="180">
-            <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+          <first_editor relative-caret-position="144">
+            <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
           </first_editor>
           <second_editor />
         </state>
