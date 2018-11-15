@@ -7,7 +7,13 @@
 )
 * [AD blog](https://blog.csdn.net/daniel_ustc/article/details/77133329)
     * 几种微分方法
+        * 手动求解法
+        * 数值微分法
+        * 符号微分法
+        * 自动微分法
     * 自动微分的两个方法
+        * 运算符重载
+        * 代码生成
     * foward-mode 和 reverse-mode
 * [eager execution](https://www.jianshu.com/p/9a212532e319)
 * [AD page](http://www.autodiff.org/)
@@ -96,6 +102,13 @@ class Node(object):
 ## 启发
 * 仅支持常值函数的微分
 * 微分通过Jacobian矩阵相乘实现
+* Node-based实际上是一种reverse mode的微分方法
+* Node-based是一种运算符重载方法
 
 ## 名词
 * reverse-mode automatic differentiation
+
+## 问题
+* forward mode 和 reverse mode 效率上究竟有什么不同？
+* 反向传播出现的非二维Jacobian如何处理
+
