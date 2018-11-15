@@ -6,7 +6,12 @@
 * [Pytorch](https://openreview.net/pdf?id=BJJsrmfCZ
 )
 * [AD blog](https://blog.csdn.net/daniel_ustc/article/details/77133329)
+    * 几种微分方法
+    * 自动微分的两个方法
+    * foward-mode 和 reverse-mode
 * [eager execution](https://www.jianshu.com/p/9a212532e319)
+* [AD page](http://www.autodiff.org/)
+* [知乎](https://www.zhihu.com/question/48356514/answer/123290631)
 ## 结构
 ### util.py
 * subvals(x:tuple, ivs:list[(i,v)]) -> let x[i] = v 
