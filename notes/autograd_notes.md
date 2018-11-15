@@ -12,6 +12,19 @@
 * [eager execution](https://www.jianshu.com/p/9a212532e319)
 * [AD page](http://www.autodiff.org/)
 * [知乎](https://www.zhihu.com/question/48356514/answer/123290631)
+    * 介绍了自动微分的两个方法
+    * 给出了forward-mode的c++代码，一次只能求一个变量的梯度
+* [c++](http://www.met.reading.ac.uk/~swrhgnrj/publications/adept.pdf)
+* [维基百科](https://en.wikipedia.org/wiki/Automatic_differentiation)
+    * 自动微分得益于任何复杂的计算结果的微分都是由简单的+-*/和基本初等函数的复合得到的，链式法则
+    * 自动微分与数值微分和符号微分的区别
+        * 符号微分代码效率低下，且难以实现
+        * 数值微分引入了舍入误差
+        * 两种方法对于高阶导数的处理都不好
+        * 两种方法对于多输入处理都不好
+    * 自动微分的两个计算方法
+        * forawrd mode，计算导数的顺序与前向传播一致
+        * reverse mode，计算导数的顺序与前向传播相反，计算量比forward-mode少一半，但需要存储Wengert list("tape")，对于f:R^n->R^m，若m远小于n，则reverse mode 更高效
 ## 结构
 ### util.py
 * subvals(x:tuple, ivs:list[(i,v)]) -> let x[i] = v 
@@ -45,11 +58,6 @@ Node类是一个抽象类，其中有三个方法
 前两个方法都只有一行 assert False，表明Node类是一个抽象类，无法创造实例。
 
 new_root方法通过调用__new__创建实例，再调用initialize_root
-
-
-## 装饰器
-### wraps
-wraps(fun, namestr="{fun}", docstr="{doc}", **kwargs)
 
 
 
@@ -87,6 +95,7 @@ class Node(object):
 
 ## 启发
 * 仅支持常值函数的微分
+* 微分通过Jacobian矩阵相乘实现
 
 ## 名词
 * reverse-mode automatic differentiation
