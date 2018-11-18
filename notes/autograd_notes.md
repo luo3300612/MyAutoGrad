@@ -32,6 +32,8 @@
         * forawrd mode，计算导数的顺序与前向传播一致
         * reverse mode，计算导数的顺序与前向传播相反，计算量比forward-mode少一半，但需要存储Wengert list("tape")，对于f:R^n->R^m，若m远小于n，则reverse mode 更高效
 * [Autodidact](https://github.com/mattjj/autodidact)
+* [audograd video](http://videolectures.net/deeplearning2017_johnson_automatic_differentiation/)
+* [autograd question](https://www.reddit.com/r/MachineLearning/comments/8ep130/d_how_does_autograd_work/)
 ## Autograd结构
 ### util.py
 * subvals(x:tuple, ivs:list[(i,v)]) -> let x[i] = v 
@@ -74,6 +76,7 @@ new_root方法通过调用__new__创建实例，再调用initialize_root
 在primitive_vjp中注册一个函数，对于函数fun，记录其对于第k个变量的Jacobian到primitive_vjp[fun][k]中
 
 
+### differential_operators.py
 
 
 ## 笔记

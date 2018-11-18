@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0fab713-e979-4d03-b0cf-853a8365c026" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notes/autograd_notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/autograd_notes.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -92,7 +91,7 @@
           <entry key="NN" value="185" />
           <entry key="Python Console" value="175" />
           <entry key="Softmax" value="7" />
-          <entry key="md" value="3626" />
+          <entry key="md" value="3701" />
           <entry key="py" value="6704" />
           <entry key="test" value="441" />
         </counts>
@@ -100,7 +99,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="8" />
-          <entry key="Markdown" value="3618" />
+          <entry key="Markdown" value="3693" />
           <entry key="Python" value="7605" />
         </counts>
       </usages-collector>
@@ -222,9 +221,9 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/notes/autograd_notes.md">
               <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-                <state split_layout="FIRST">
-                  <first_editor relative-caret-position="412">
-                    <caret line="69" column="15" lean-forward="true" selection-start-line="69" selection-start-column="15" selection-end-line="69" selection-end-column="15" />
+                <state split_layout="SPLIT">
+                  <first_editor relative-caret-position="394">
+                    <caret line="35" column="104" selection-start-line="35" selection-start-column="104" selection-end-line="35" selection-end-column="104" />
                   </first_editor>
                   <second_editor />
                 </state>
@@ -301,10 +300,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="55" />
+    <option name="x" value="987" />
     <option name="y" value="30" />
-    <option name="width" value="913" />
-    <option name="height" value="1042" />
+    <option name="width" value="933" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -561,7 +560,7 @@
     <frame x="55" y="30" width="1865" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15592286" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15592286" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -575,7 +574,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.35320586" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.35320586" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.28233972" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -808,9 +807,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/notes/autograd_notes.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="412">
-            <caret line="69" column="15" lean-forward="true" selection-start-line="69" selection-start-column="15" selection-end-line="69" selection-end-column="15" />
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="394">
+            <caret line="35" column="104" selection-start-line="35" selection-start-column="104" selection-end-line="35" selection-end-column="104" />
           </first_editor>
           <second_editor />
         </state>
