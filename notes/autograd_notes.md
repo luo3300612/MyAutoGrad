@@ -15,7 +15,7 @@
         * 运算符重载
         * 代码生成
     * foward-mode 和 reverse-mode
-* [eager execution](https://www.jianshu.com/p/9a212532e319)
+* [tensorflow eager execution](https://www.jianshu.com/p/9a212532e319)
 * [AD page](http://www.autodiff.org/)
 * [知乎](https://www.zhihu.com/question/48356514/answer/123290631)
     * 介绍了自动微分的两个方法
@@ -31,7 +31,8 @@
     * 自动微分的两个计算方法
         * forawrd mode，计算导数的顺序与前向传播一致
         * reverse mode，计算导数的顺序与前向传播相反，计算量比forward-mode少一半，但需要存储Wengert list("tape")，对于f:R^n->R^m，若m远小于n，则reverse mode 更高效
-## 结构
+* [Autodidact](https://github.com/mattjj/autodidact)
+## Autograd结构
 ### util.py
 * subvals(x:tuple, ivs:list[(i,v)]) -> let x[i] = v 
 * subval(x:tuple, i:int, v:num) -> let x[i] = v
@@ -64,6 +65,14 @@ Node类是一个抽象类，其中有三个方法
 前两个方法都只有一行 assert False，表明Node类是一个抽象类，无法创造实例。
 
 new_root方法通过调用__new__创建实例，再调用initialize_root
+
+
+## Autodidact结构
+
+### core.py
+`func defvjp`:
+在primitive_vjp中注册一个函数，对于函数fun，记录其对于第k个变量的Jacobian到primitive_vjp[fun][k]中
+
 
 
 
@@ -111,4 +120,5 @@ class Node(object):
 ## 问题
 * forward mode 和 reverse mode 效率上究竟有什么不同？
 * 反向传播出现的非二维Jacobian如何处理
-
+* unary_to_nary做了啥(wrap_util)
+* 为什么VJPNode的initialize_root方法中的value没有用？
