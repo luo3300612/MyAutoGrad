@@ -33,6 +33,11 @@
         * reverse mode，计算导数的顺序与前向传播相反，计算量比forward-mode少一半，但需要存储Wengert list("tape")，对于f:R^n->R^m，若m远小于n，则reverse mode 更高效
 * [Autodidact](https://github.com/mattjj/autodidact)
 * [audograd video](http://videolectures.net/deeplearning2017_johnson_automatic_differentiation/)
+    * 求梯度其实是递归地调用链式法则，其中设计的就是向量和Jacobian的乘积(vector jacobian product,VJP)
+    * 可以通过改变jacobian的排列方式，来使得计算更加高效(复杂度更低、占内存更低)，但找到最好的排列是np-hard问题
+    * 两个极端的例子
+        * forward accumulation
+        * reverse accumulation    
 * [autograd question](https://www.reddit.com/r/MachineLearning/comments/8ep130/d_how_does_autograd_work/)
 ## Autograd结构
 ### util.py
